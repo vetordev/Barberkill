@@ -17,7 +17,7 @@ export class Server {
       }
     });
   }
-  initRoutes(): Promise<any> {
+  initRoutes(): Promise<express.Application> {
     return new Promise((resolve, reject) => {
       try {
         this.app = express();
