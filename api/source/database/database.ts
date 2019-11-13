@@ -1,13 +1,18 @@
-import * as Sequelize from 'sequelize';
-import { reject } from 'bluebird';
+import { Sequelize } from 'sequelize';
+import { dbConfig } from '../config/database';
 
 export class Database {
   
-  database: Sequelize.Sequelize
-  start(): Promise<Sequelize.Sequelize>{
-    const connection = new Sequelize('');
+  database: Sequelize;
+ 
+  start(): Promise<Database>{
     return new Promise((resolve, reject) => {
-
+      try {
+        this.database = new Sequelize(dbConfig);
+        resolve(this);
+      }catch(error) {
+        reject(error);
+      }
     });
   }
 }

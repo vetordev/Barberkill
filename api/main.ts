@@ -1,10 +1,13 @@
 import * as express from 'express';
+import {Server} from './source/server/server';
 
-const app = express();
+const server = new Server();
 
-app.use(express.json());
-app.get('/', (req, res, next) => {
-  res.json({connected : true});
+server.bootstrap().then(database => {
+  // console.log('Server is listening on: 3002');
+  console.log(database)
+}).catch(error => {
+  console.log('Server failed to start');
+  console.log(error);
+  process.exit(1);
 });
-
-app.listen(3002);

@@ -39,6 +39,13 @@
 Arquivos de node são tratados como um módulo, o que é declarado neles não fica vísivel aos outros arquivos
 para disponibilizar informações usa-se `module.export`, para pegar usa-se `require`('nome-arquivo')
 
+## SEQUELIZE  
+
+`sequelize db:create` => cria sua base de dados  
+`sequelize migration:create --name=create-users` => cria uma migration  
+`sequelize db:migrate` => executa os migrates do seu code  
+`sequelize db:migrate:undo` => desfaz o último migrate  
+
 
 ---
 ## Links
