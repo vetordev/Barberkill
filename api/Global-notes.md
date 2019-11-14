@@ -48,6 +48,7 @@ para disponibilizar informações usa-se `module.export`, para pegar usa-se `req
 
 
 ---
+psql -Upostgres -hlocalhost
 
 git add api/dist api/source api/.sequelizerc api/Global-notes.md api/main.ts api/package.json api/package-lock.json a
 pi/tsconfig.json api/yarn.lock

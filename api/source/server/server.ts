@@ -11,7 +11,9 @@ export class Server {
     return new Promise((resolve, reject) => {
       try {
         this.database = new Database();
-        resolve(this.database.start());        
+        resolve(this.database.start());   
+        
+        
       } catch (error) {
         reject(error)
       }
