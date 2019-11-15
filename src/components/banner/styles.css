@@ -1,0 +1,32 @@
+div#banner {
+    background: url('./img/banner-barber.jpg');
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: scaleX(-1); */
+}
+div#banner #logo {
+    background: url('./img/logo.png');
+    background-size: cover;
+    width: 700px;
+    height: 600px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#user-ico {
+    font-size: 50px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    margin: 20px;
+}
