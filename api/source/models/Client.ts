@@ -6,7 +6,8 @@ export class Client extends Model{
         
         this.init({
             name: DataTypes.STRING,
-            email: DataTypes.STRING
+            email: DataTypes.STRING,
+            
         },
         {
             sequelize: connection,

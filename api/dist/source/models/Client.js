@@ -5,7 +5,7 @@ class Client extends sequelize_1.Model {
     static start(connection) {
         this.init({
             name: sequelize_1.DataTypes.STRING,
-            email: sequelize_1.DataTypes.STRING
+            email: sequelize_1.DataTypes.STRING,
         }, {
             sequelize: connection,
             modelName: 'Client'

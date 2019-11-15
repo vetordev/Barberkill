@@ -6,9 +6,9 @@ export class ClientController {
   static store(req: express.Request, res: express.Response){
 
     // Recebendo parâmetros do corpo da requisição
-    const { name, email } = req.body;
+    // const { name, email } = req.body;
 
-    Client.create({name, email}).then(client => {
+    Client.create(req.body).then(client => {
       res.json(client);
     }).catch(error => {
       console.log(error);

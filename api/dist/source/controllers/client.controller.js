@@ -4,8 +4,8 @@ const Client_1 = require("../models/Client");
 class ClientController {
     static store(req, res) {
         // Recebendo parâmetros do corpo da requisição
-        const { name, email } = req.body;
-        Client_1.Client.create({ name, email }).then(client => {
+        // const { name, email } = req.body;
+        Client_1.Client.create(req.body).then(client => {
             res.json(client);
         }).catch(error => {
             console.log(error);
