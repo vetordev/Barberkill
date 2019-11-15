@@ -1,7 +1,7 @@
 
 import * as express from 'express';
 import { Router } from '../config/Router';
-import { ClientController } from '../controller/client.controller';
+import { ClientController } from '../controllers/client.controller';
 
 class ClientRouter implements Router {
 
