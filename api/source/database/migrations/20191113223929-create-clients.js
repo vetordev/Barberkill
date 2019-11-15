@@ -11,12 +11,24 @@ module.exports = {
         allowNull: false,
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(100),
         allowNull: false
       },
       email: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(100),
         allowNull: false,
+      },
+      cpf: {
+        type: Sequelize.STRING(8),
+        allowNull: false,
+      },
+      telephone: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      cellphone: {
+        type: Sequelize.STRING,
+        allowNUll: false
       },
       created_at: {
         type : Sequelize.DATE,
