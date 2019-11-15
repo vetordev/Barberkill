@@ -19,7 +19,7 @@ class Server {
             try {
                 this.app = express();
                 this.app.use(express.json());
-                for (const router of routers) {
+                for (let router of routers) {
                     this.app.use(router.applyRoutes());
                 }
                 this.app.get('/', (req, res, next) => {

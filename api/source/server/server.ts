@@ -26,7 +26,7 @@ export class Server {
 
         this.app.use(express.json());
 
-        for(const router of routers){
+        for (let router of routers){
           this.app.use(router.applyRoutes());
         }
 
