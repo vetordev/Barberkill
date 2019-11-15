@@ -14,11 +14,14 @@ class Server {
             }
         });
     }
-    initRoutes() {
+    initRoutes(routers) {
         return new Promise((resolve, reject) => {
             try {
                 this.app = express();
                 this.app.use(express.json());
+                for (const router of routers) {
+                    this.app.use(router.applyRoutes());
+                }
                 this.app.get('/', (req, res, next) => {
                     res.json({ connected: true });
                 });
@@ -32,9 +35,9 @@ class Server {
         });
     }
     /* Método para iniciar tudo */
-    bootstrap() {
+    bootstrap(routers = []) {
         // return new Promise((resolve,))
-        return this.initializeDB().then(() => this.initRoutes().then(() => this));
+        return this.initializeDB().then(() => this.initRoutes(routers).then(() => this));
     }
 }
 exports.Server = Server;

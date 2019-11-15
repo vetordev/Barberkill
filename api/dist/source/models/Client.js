@@ -1,17 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Client {
-    /*static init(connection: String){
-        super.init({
-            name: DataTypes.STRING,
-            email: DataTypes.STRING
-        },
-        {
+const sequelize_1 = require("sequelize");
+class Client extends sequelize_1.Model {
+    static start(connection) {
+        this.init({
+            name: sequelize_1.DataTypes.STRING,
+            email: sequelize_1.DataTypes.STRING
+        }, {
             sequelize: connection,
             modelName: 'Client'
         });
-    }*/
-    constructor(connection) {
     }
 }
 exports.Client = Client;

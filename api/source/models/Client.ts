@@ -1,8 +1,8 @@
-import { Model, DataTypes } from 'sequelize';
+import { Model, DataTypes, Sequelize } from 'sequelize';
 
-export class Client <T extends Model<T>>{
-    /*static init(connection: String){
-        super.init({
+export class Client extends Model{
+    static start(connection: Sequelize): void {
+        this.init({
             name: DataTypes.STRING,
             email: DataTypes.STRING
         },
@@ -10,10 +10,6 @@ export class Client <T extends Model<T>>{
             sequelize: connection,
             modelName: 'Client'
         });
-    }*/
-     
-    constructor(connection: String){
-        
     }
 }
 
