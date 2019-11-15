@@ -6,7 +6,8 @@ import { EmployeeController } from '../controllers/employee.controller';
 class EmployeeRouter implements Router {
   application: express.Router = express.Router()
   applyRoutes(){
-    this.application.post('/employee/:cep_id', EmployeeController.store)
+    this.application.post('/employees/:cep_id', EmployeeController.store)
+    this.application.get('/employees', EmployeeController.index);
     return this.application;
   };
 }
