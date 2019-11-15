@@ -4,10 +4,9 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('addresses', {
       id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true
       },
       street: {
         type: Sequelize.STRING(100),
@@ -23,6 +22,14 @@ module.exports = {
       },
       neighborhood: {
         type: Sequelize.STRING(45),
+        allowNull: false
+      },
+      created_at: {
+        type : Sequelize.DATE,
+        allowNull: false
+      },
+      updated_at: {
+        type: Sequelize.DATE,
         allowNull: false
       }
 

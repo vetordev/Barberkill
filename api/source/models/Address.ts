@@ -1,5 +1,4 @@
 import { Model, Sequelize, DataTypes } from 'sequelize';
-import sequelize = require('sequelize');
 
 export class Address extends Model {
   static start(connection: Sequelize){
@@ -16,7 +15,7 @@ export class Address extends Model {
 
   static associate(models: any){
     this.hasMany(models.Employee, {
-      foreignKey: 'cep', as: 'fk_cep_address'
+      foreignKey: 'cep_id', as: 'fk_cep_address'
     })
   }
 }

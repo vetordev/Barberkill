@@ -9,7 +9,7 @@ export class ClientController {
     // const { name, email } = req.body;
 
     Client.create(req.body).then(client => {
-      res.json(client);
+      return res.json(client);
     }).catch(error => {
       console.log(error);
     });
@@ -18,7 +18,7 @@ export class ClientController {
   static index(req: express.Request, res: express.Response){
     
     Client.findAll().then(clients => {
-      res.json(clients);
+      return res.json(clients);
     }).catch(error => {
       console.log(error);
     });

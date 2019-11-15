@@ -19,7 +19,7 @@ class Employee extends sequelize_1.Model {
     }
     static associate(models) {
         this.belongsTo(models.Address, {
-            foreignKey: 'cep', as: 'fk_employee_address'
+            foreignKey: 'cep_id', as: 'fk_employee_address'
         });
     }
 }

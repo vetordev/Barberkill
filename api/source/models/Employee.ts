@@ -21,7 +21,7 @@ export class Employee extends Model {
 
   static associate(models: any){
     this.belongsTo(models.Address,{
-      foreignKey: 'cep', as: 'fk_employee_address'
+      foreignKey: 'cep_id', as: 'fk_employee_address'
     })
   }
 }

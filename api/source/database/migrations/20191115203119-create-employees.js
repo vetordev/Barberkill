@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     
     return queryInterface.createTable('employees', {
-      id: {
+      user_id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -19,7 +19,7 @@ module.exports = {
         allowNull: false
       },
       cpf: {
-        type: Sequelize.STRING(8),
+        type: Sequelize.STRING(11),
         allowNull: false
       },
       telephone: {
@@ -34,8 +34,8 @@ module.exports = {
         type: Sequelize.STRING(15),
         allowNull: false
       },
-      cep: {
-        type: Sequelize.INTEGER,
+      cep_id: {
+        type: Sequelize.STRING,
         allowNull: false,
         references: { model: 'addresses', key: 'id' },
         onUpdate: 'CASCADE',
