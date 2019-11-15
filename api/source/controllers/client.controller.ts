@@ -3,7 +3,7 @@ import * as express from 'express';
 
 export class ClientController {
 
-  store(req: express.Request, res: express.Response){
+  static store(req: express.Request, res: express.Response){
 
     // Recebendo parâmetros do corpo da requisição
     const { name, email } = req.body;
@@ -13,9 +13,16 @@ export class ClientController {
     }).catch(error => {
       console.log(error);
     });
-
-
   }
 
+  static index(req: express.Request, res: express.Response){
+    
+    Client.findAll().then(clients => {
+      res.json(clients);
+    }).catch(error => {
+      console.log(error);
+    });
+  }
 }
+
 

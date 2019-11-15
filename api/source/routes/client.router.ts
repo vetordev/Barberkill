@@ -1,15 +1,18 @@
-import { Client } from '../models/Client';
+
 import * as express from 'express';
 import { Router } from '../config/Router';
+import { ClientController } from '../controller/client.controller';
 
 class ClientRouter implements Router {
 
   application: express.Router = express.Router();
+
   applyRoutes(){
-  
-      this.application.get('/client', (req, res, next) =>{
-        res.json({ client: 'ok' });
-      });
+    
+    //buscar todos os clientes
+    this.application.get('/clients', ClientController.index);
+    //inserir um cliene
+    this.application.post('/clients', ClientController.store);
     
     return this.application;
   }

@@ -1,7 +1,9 @@
 import { Model, DataTypes, Sequelize } from 'sequelize';
 
 export class Client extends Model{
+
     static start(connection: Sequelize): void {
+        
         this.init({
             name: DataTypes.STRING,
             email: DataTypes.STRING
@@ -10,6 +12,7 @@ export class Client extends Model{
             sequelize: connection,
             modelName: 'Client'
         });
+
     }
 }
 
