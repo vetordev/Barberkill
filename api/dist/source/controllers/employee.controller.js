@@ -24,5 +24,21 @@ class EmployeeController {
             return res.json(employees);
         });
     }
+    static show(req, res) {
+        const { id } = req.params;
+        Employee_1.Employee.findByPk(id, {
+            include: [
+                {
+                    association: 'address',
+                }
+            ]
+        }).then(employee => {
+            if (employee === null)
+                return res.status(404).json({ error: 'User not found' });
+            return res.json(employee);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
 }
 exports.EmployeeController = EmployeeController;

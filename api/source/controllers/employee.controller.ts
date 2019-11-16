@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { Employee } from '../models/Employee';
 import { Address } from '../models/Address';
+import { Association } from 'sequelize/types';
 
 export class EmployeeController{
   static store(req: express.Request, res: express.Response){
@@ -27,5 +28,25 @@ export class EmployeeController{
     Employee.findAll().then(employees => {
       return res.json(employees);
     });
+  }
+
+  static show(req: express.Request, res: express.Response){
+
+    const { id } = req.params;
+    Employee.findByPk(id, {
+      include: [
+        {
+          association : 'address',
+        }
+      ]
+    }).then(employee => {
+      if (employee === null) 
+        return res.status(404).json({ error : 'User not found'} );
+
+      return res.json(employee);
+    }).catch(error => {
+      console.log(error);
+    });
+    
   }
 }

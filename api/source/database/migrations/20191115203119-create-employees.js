@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     
     return queryInterface.createTable('employees', {
-      user_id: {
+      id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
