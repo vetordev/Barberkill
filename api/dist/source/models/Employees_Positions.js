@@ -8,7 +8,7 @@ class EmployeesPositions extends sequelize_1.Model {
             position_id: sequelize_1.DataTypes.INTEGER
         }, {
             sequelize: connection,
-            modelName: 'employees_positions'
+            modelName: 'EmployeesPositions'
         });
     }
 }

@@ -12,7 +12,7 @@ class Position extends sequelize_1.Model {
         });
     }
     static associate(models) {
-        this.belongsToMany(models.Employee, { foreignKey: 'position_id', through: { model: models.EmployeesPositions }, as: 'employees' });
+        this.belongsToMany(models.Employee, { foreignKey: 'position_id', through: { model: models.EmployeesPositions }, as: 'employees_ps' });
     }
 }
 exports.Position = Position;

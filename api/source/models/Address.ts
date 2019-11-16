@@ -15,7 +15,7 @@ export class Address extends Model {
 
   static associate(models: any){
     this.hasMany(models.Employee, {
-      foreignKey: 'cep_id', as: 'employees'
+      foreignKey: 'cep_id', as: 'employees_ad'
     })
   }
 }

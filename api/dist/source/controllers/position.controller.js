@@ -15,21 +15,22 @@ class PositionController {
     static store(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { employee_id } = req.params;
-            const { name, salary } = req.body;
-            const employee = yield Employee_1.Employee.findByPk(employee_id).then(employee => {
-                if (employee === null)
-                    return res.status(404).json({ error: "Employee not found" });
-            });
+            const { position, salary } = req.body;
+            const employee = yield Employee_1.Employee.findByPk(employee_id);
+            if (employee === null)
+                return res.status(404).json({ error: "Employee not found" });
             //Procura uma position, se não encontrar a cria
             Position_1.Position.findOrCreate({
-                where: { name },
+                where: { position },
                 //Resto dos dados (Caso for criar)
-                defaults: { salary }
+                defaults: { salary },
             }).then(([position, created]) => {
                 employee.addPosition(position);
                 return res.json(position);
             });
         });
+    }
+    static index(req, res) {
     }
 }
 exports.PositionController = PositionController;

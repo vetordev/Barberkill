@@ -7,7 +7,7 @@ export class EmployeesPositions extends Model {
       position_id: DataTypes.INTEGER
     },{
       sequelize: connection,
-      modelName: 'employees_positions'
+      modelName: 'EmployeesPositions'
     })
   }
 }
