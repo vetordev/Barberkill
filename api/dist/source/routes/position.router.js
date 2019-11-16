@@ -7,10 +7,12 @@ class PositionRouter {
         this.application = express.Router();
     }
     applyRoutes() {
+        //Inserir uma position e um employee   
         this.application.post('/employees/:employee_id/positions', position_controller_1.PositionController.store);
-        this.application.get('/positions', (req, res) => {
-            res.json({ working: true });
-        });
+        //Buscando todos
+        this.application.get('/positions', position_controller_1.PositionController.index);
+        //Mostrando as positions de um employee
+        this.application.get('/employees/:employee_id/positions', position_controller_1.PositionController.show);
         return this.application;
     }
 }

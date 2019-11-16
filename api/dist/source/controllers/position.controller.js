@@ -27,10 +27,32 @@ class PositionController {
             }).then(([position, created]) => {
                 employee.addPosition(position);
                 return res.json(position);
+            }).catch(error => {
+                console.log(error);
             });
         });
     }
     static index(req, res) {
+        Position_1.Position.findAll({}).then(position => {
+            return res.json(position);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+    static show(req, res) {
+        const { employee_id } = req.params;
+        Employee_1.Employee.findByPk(employee_id, {
+            attributes: { exclude: ['createdAt', 'updatedAt'] },
+            include: [
+                {
+                    association: 'positions',
+                    attributes: ['position', 'salary'],
+                    through: { attributes: [] }
+                }
+            ]
+        }).then(employee => {
+            return res.json(employee);
+        });
     }
 }
 exports.PositionController = PositionController;

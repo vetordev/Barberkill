@@ -6,11 +6,14 @@ class PositionRouter implements Router{
    application: express.Router = express.Router();
    applyRoutes(){
 
-    this.application.post('/employees/:employee_id/positions', PositionController.store);
+   //Inserir uma position e um employee   
+   this.application.post('/employees/:employee_id/positions', PositionController.store);
 
-    this.application.get('/positions', (req, res) => {
-       res.json({working : true})
-    })
+   //Buscando todos
+   this.application.get('/positions', PositionController.index);
+
+   //Mostrando as positions de um employee
+   this.application.get('/employees/:employee_id/positions', PositionController.show);
 
     return this.application;
    }
