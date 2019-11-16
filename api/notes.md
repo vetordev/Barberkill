@@ -1,5 +1,9 @@
 - [ ] Relação N <=> N para positions e employees
-- [ ] Finalizar migrations do banco
+- [ ] Finalizar migrations
+  - [ ] Schedule
+  - [ ] Attendances
+  - [ ] Payment
+  - [x] Service
 - [ ] Models/Routes/Controller de todas as tabelas
 
 
