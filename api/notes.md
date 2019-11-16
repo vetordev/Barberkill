@@ -1,12 +1,38 @@
-- [ ] Relação N <=> N para positions e employees
-- [ ] Finalizar migrations
-  - [ ] Schedule
-  - [ ] Attendances
-  - [ ] Payment
-  - [x] Service
-- [ ] Models/Routes/Controller de todas as tabelas
 
+## Tarefas gerais
 
+**Migrations**
+- [x] Schedules
+- [x] Attendances
+- [x] Payment
+- [x] Service
+
+---
+**Models**
+- [ ] Schedule
+- [ ] Attendances
+- [ ] Payment
+- [ ] Service
+
+--- 
+
+**Routes**
+- [ ] Schedule
+- [ ] Attendances
+- [ ] Payment
+- [ ] Service
+
+---
+
+**Controllers**
+- [ ] Schedule
+- [ ] Attendances
+- [ ] Payment
+- [ ] Service
+
+---
+
+## Funções de tabelas específicas
 **Positions**
 - [ ] Alterar uma position de um employee
 - [ ] Alterar dados de uma position

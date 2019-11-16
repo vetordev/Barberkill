@@ -2,21 +2,17 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('services', {
+    return queryInterface.createTable('payments', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
       },
-      service: {
+      formOf_payment: {
         type: Sequelize.STRING(70),
         allowNull: false
       },
-      value: {
-        type: Sequelize.FLOAT,
-        allowNull: false
-      } ,
       created_at: {
         type : Sequelize.DATE,
         allowNull: false
@@ -26,9 +22,10 @@ module.exports = {
         allowNull: false
       }
     });
+    
   },
 
   down: (queryInterface, Sequelize) => {   
-    return queryInterface.dropTable('services');
+    return queryInterface.dropTable('payments');
   }
 };
