@@ -36,9 +36,13 @@ export class EmployeeController{
     Employee.findByPk(id, {
       include: [
         {
-          association : 'address',
-        }
-      ]
+          association : 'address', 
+          attributes: { exclude : ['createdAt', 'updatedAt']}
+        },
+        
+      ],
+      attributes: { exclude : ['createdAt', 'updatedAt']}
+      
     }).then(employee => {
       if (employee === null) 
         return res.status(404).json({ error : 'User not found'} );
