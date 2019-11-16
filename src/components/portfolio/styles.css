@@ -1,0 +1,57 @@
+div#portfolio {
+    width: 100%;
+    height: 100vh;
+    background: url('./img/background.png');
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    padding-left: 14%;
+    color: #fff;
+    z-index: 1;
+}
+div.no-filter {
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+}
+div#portfolio .no-filter h1 {
+    padding: 50px 0 0 50px;
+    z-index: 5;
+}
+div#container-aux {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+div#images-port {
+    /* background: crimson; */
+    width: 90%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0px 80px;
+}
+div#images-port div {
+    width: 450px;
+    height: 350px;  
+}
+div#images-port #img1 {
+    background: url('./img/image1.png');
+    background-size: cover;
+}
+div#images-port #img2 {
+    background: url('./img/image2.png');
+    background-size: cover;
+}
+button {
+    width: 200px;
+    height: 60px;
+    background: #390A0A;
+    color: #fff;
+    font-size: 21px;
+    border: none;
+    border-radius: 7px;
+}

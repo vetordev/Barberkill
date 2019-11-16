@@ -9,7 +9,6 @@ const Banner = () => (
     <div id="banner">
         <FontAwesomeIcon icon={faUserCircle} id="user-ico"/>
         <div id="logo"></div>
-        {/* <div></div> */}
     </div>
 );
 

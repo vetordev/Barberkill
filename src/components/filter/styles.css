@@ -1,0 +1,9 @@
+div#filter {
+    width: 100%;
+    height: 300vh;
+    background: rgba(34, 14, 14, 0.726);
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    z-index: 1;
+}

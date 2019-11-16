@@ -1,0 +1,67 @@
+div#espaco {
+    width: 100vw;
+    height: 200vh;
+    position: relative;
+    /* top: 100vh; */
+    background: rgb(39, 36, 36);
+    color: #FFF;
+    padding: 0;
+    margin: 0;
+    padding-left: 14%;
+}
+div#espaco h1 {
+    padding: 50px 0 0 50px;
+}
+
+div#espaco #cell-container #part1,#part2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background: chartreuse; */
+}
+#part2 {
+    margin-top: 7vh;
+}
+div.cell {
+    width: 90%;
+    /* background: #000; */
+    height: 40vh;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    /* background: chocolate; */
+    /* align-self: center; */
+    /* flex-direction: row; */
+}
+div#cell-container .cell .img-spc{
+    background-size: cover;
+    /* max-width: 500px;
+    max-height: 100%; */
+    width: 50%;
+    height: 300px;
+    /* margin: 10px */
+}
+div#cell-container .cell .info-spc{
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#img-1 {
+    background: url('./img/espaco1.jpg');
+}
+
+#img-2 {
+    background: url('./img/espaco2.jpg');
+}
+#img-3 {
+    background: url('./img/espaco3.jpg');
+}
+
+#img-4 {
+    background: url('./img/espaco4.jpg');
+}
