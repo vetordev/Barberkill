@@ -13,7 +13,6 @@ export class Server {
         this.database = new Database();
         resolve(this.database.start());   
         
-        
       } catch (error) {
         reject(error)
       }

@@ -5,6 +5,8 @@ const database_1 = require("../config/database");
 const Client_1 = require("../models/Client");
 const Employee_1 = require("../models/Employee");
 const Address_1 = require("../models/Address");
+const Position_1 = require("../models/Position");
+const Employees_Positions_1 = require("../models/Employees_Positions");
 class Database {
     start() {
         return new Promise((resolve, reject) => {
@@ -13,8 +15,11 @@ class Database {
                 Client_1.Client.start(this.database);
                 Address_1.Address.start(this.database);
                 Employee_1.Employee.start(this.database);
+                Position_1.Position.start(this.database);
+                Employees_Positions_1.EmployeesPositions.start(this.database);
                 Employee_1.Employee.associate(this.database.models);
                 Address_1.Address.associate(this.database.models);
+                Position_1.Position.associate(this.database.models);
                 resolve(this);
             }
             catch (error) {

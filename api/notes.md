@@ -1,0 +1,3 @@
+- [ ] Relação N <=> N para positions e employees
+- [ ] Finalizar migrations do banco
+- [ ] Models/Routes/Controller de todas as tabelas

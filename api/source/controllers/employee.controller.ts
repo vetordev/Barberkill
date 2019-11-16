@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { Employee } from '../models/Employee';
 import { Address } from '../models/Address';
-import { Association } from 'sequelize/types';
+
 
 export class EmployeeController{
   static store(req: express.Request, res: express.Response){

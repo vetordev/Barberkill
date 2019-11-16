@@ -21,6 +21,7 @@ class Employee extends sequelize_1.Model {
         this.belongsTo(models.Address, {
             foreignKey: 'cep_id', as: 'address'
         });
+        this.belongsToMany(models.Position, { foreignKey: 'employee_id', through: { model: models.EmployeesPositions }, as: 'positions' });
     }
 }
 exports.Employee = Employee;
