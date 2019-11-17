@@ -11,5 +11,10 @@ class Service extends sequelize_1.Model {
             modelName: "Service"
         });
     }
+    static associate(models) {
+        this.hasMany(models.Schedule, {
+            foreignKey: 'service_id', as: 'schedules'
+        });
+    }
 }
 exports.Service = Service;

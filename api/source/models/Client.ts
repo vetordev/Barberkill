@@ -7,13 +7,20 @@ export class Client extends Model{
         this.init({
             name: DataTypes.STRING,
             email: DataTypes.STRING,
-            
+            cpf: DataTypes.STRING(8),
+            telephone: DataTypes.STRING,
+            cellphone: DataTypes.STRING
         },
         {
             sequelize: connection,
             modelName: 'Client'
         });
 
+    }
+    static associate(models: any){
+        this.hasMany(models.Schedule, {
+            foreignKey: 'client_id', as: 'schedules'
+        });
     }
 }
 

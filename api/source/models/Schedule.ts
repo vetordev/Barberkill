@@ -13,9 +13,9 @@ export class Schedule extends Model {
   }
 
   static associate(models: any){
-    this.hasOne(models.Client, { foreignKey: "client_id", as: 'clients' });    
-    this.hasOne(models.Service, { foreignKey: "service_id", as: 'services' });
-    this.hasOne(models.Employee, { foreignKey: "employee_id", as: 'employees' });
+    this.belongsTo(models.Client, { foreignKey: "client_id", as: 'clients' });    
+    this.belongsTo(models.Service, { foreignKey: "service_id", as: 'services' });
+    this.belongsTo(models.Employee, { foreignKey: "employee_id", as: 'employees' });
   }
 }
 

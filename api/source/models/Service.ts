@@ -10,4 +10,10 @@ export class Service extends Model {
       modelName: "Service"
     });
   }
+
+  static associate(models: any){
+    this.hasMany(models.Schedule, {
+      foreignKey: 'service_id', as: 'schedules'
+    });
+  }
 }
