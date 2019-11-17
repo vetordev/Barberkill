@@ -10,5 +10,8 @@ class Payment extends sequelize_1.Model {
             modelName: 'Payment'
         });
     }
+    static associate(models) {
+        this.belongsToMany(models.Schedule, { foreignKey: 'payment_id', through: 'attendances', as: 'schedule_pay' });
+    }
 }
 exports.Payment = Payment;

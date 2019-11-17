@@ -7,6 +7,7 @@ import { Position } from '../models/Position';
 import { EmployeesPositions } from '../models/Employees_Positions';
 import { Service } from '../models/Service';
 import { Payment } from '../models/Payment';
+import { Schedule } from '../models/Schedule';
 export class Database {
   
   database: Sequelize;
@@ -23,11 +24,16 @@ export class Database {
         EmployeesPositions.start(this.database);
         Service.start(this.database);
         Payment.start(this.database);
+        Schedule.start(this.database);
 
-        Employee.associate(this.database.models);
+        Client.associate(this.database.models);
         Address.associate(this.database.models);
+        Employee.associate(this.database.models);
         Position.associate(this.database.models);
-
+        Service.associate(this.database.models);
+        Payment.associate(this.database.models);
+        Schedule.associate(this.database.models);
+        
         resolve(this);
       }catch(error) {
         reject(error);
