@@ -1,9 +1,9 @@
-import * as express from 'express';
-import { Router } from '../config/Router';
+import { Router } from 'express';
+import { Routers } from '../config/Router';
 import { PositionController } from '../controllers/position.controller';
 
-class PositionRouter implements Router{
-   application: express.Router = express.Router();
+class PositionRouter implements Routers{
+   application: Router = Router();
    applyRoutes(){
 
    //Inserir uma position e um employee   

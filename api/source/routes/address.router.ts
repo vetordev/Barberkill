@@ -1,10 +1,10 @@
-import * as express from 'express';
-import { Router } from '../config/Router';
+import { Router } from 'express';
+import { Routers } from '../config/Router';
 import { AddressController } from '../controllers/address.controller';
 
-class AddressRouter implements Router {
+class AddressRouter implements Routers {
 
-  application: express.Router = express.Router();
+  application: Router = Router();
 
   applyRoutes(){
     this.application.post('/addresses', AddressController.store);

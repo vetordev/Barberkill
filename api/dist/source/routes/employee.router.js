@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express");
+const express_1 = require("express");
 const employee_controller_1 = require("../controllers/employee.controller");
 class EmployeeRouter {
     constructor() {
-        this.application = express.Router();
+        this.application = express_1.Router();
     }
     applyRoutes() {
         // Inserir um usuário

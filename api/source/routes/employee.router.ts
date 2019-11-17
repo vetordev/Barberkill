@@ -1,10 +1,9 @@
-
-import * as express from 'express';
-import { Router } from '../config/Router';
+import { Router } from 'express';
+import { Routers } from '../config/Router';
 import { EmployeeController } from '../controllers/employee.controller';
 
-class EmployeeRouter implements Router {
-  application: express.Router = express.Router()
+class EmployeeRouter implements Routers {
+  application: Router = Router()
   applyRoutes(){
     // Inserir um usuário
     this.application.post('/employees/:cep_id', EmployeeController.store)

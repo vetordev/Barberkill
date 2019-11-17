@@ -1,11 +1,10 @@
-
-import * as express from 'express';
-import { Router } from '../config/Router';
+import { Router } from 'express';
+import { Routers } from '../config/Router';
 import { ClientController } from '../controllers/client.controller';
 
-class ClientRouter implements Router {
+class ClientRouter implements Routers {
 
-  application: express.Router = express.Router();
+  application: Router = Router();
 
   applyRoutes(){
     

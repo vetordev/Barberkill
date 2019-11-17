@@ -1,14 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const address_controller_1 = require("../controllers/address.controller");
-class AddressRouter {
+const service_controller_1 = require("../controllers/service.controller");
+class ServiceRouter {
     constructor() {
         this.application = express_1.Router();
     }
     applyRoutes() {
-        this.application.post('/addresses', address_controller_1.AddressController.store);
+        this.application.post('/services', service_controller_1.ServiceController.store);
         return this.application;
     }
+    ;
 }
-exports.addressRouter = new AddressRouter();
+exports.serviceRouter = new ServiceRouter();

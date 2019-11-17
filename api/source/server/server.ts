@@ -1,6 +1,6 @@
 import { Database } from '../database/database'
 import * as express from 'express';
-import { Router } from '../config/Router';
+import { Routers } from '../config/Router';
 
 export class Server {
 
@@ -18,7 +18,7 @@ export class Server {
       }
     });
   }
-  initRoutes(routers: Router[]): Promise<express.Application> {
+  initRoutes(routers: Routers[]): Promise<express.Application> {
     return new Promise((resolve, reject) => {
       try {
         this.app = express();
@@ -42,7 +42,7 @@ export class Server {
     });
   }
   /* Método para iniciar tudo */
-  bootstrap(routers: Router[] = []): Promise<Server>{
+  bootstrap(routers: Routers[] = []): Promise<Server>{
     // return new Promise((resolve,))
     return this.initializeDB().then(() => 
     this.initRoutes(routers).then(() => this));

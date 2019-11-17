@@ -9,7 +9,7 @@
 
 ---
 **Models**
-- [ ] Schedule
+- [x] Schedule
 - [x] Attendances
 - [x] Payment
 - [x] Service
@@ -20,7 +20,7 @@
 - [ ] Schedule
 - [ ] Attendances
 - [ ] Payment
-- [ ] Service
+- [x] Service
 
 ---
 
@@ -28,7 +28,7 @@
 - [ ] Schedule
 - [ ] Attendances
 - [ ] Payment
-- [ ] Service
+- [x] Service
 
 ---
 
