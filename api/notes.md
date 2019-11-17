@@ -10,9 +10,9 @@
 ---
 **Models**
 - [ ] Schedule
-- [ ] Attendances
-- [ ] Payment
-- [ ] Service
+- [x] Attendances
+- [x] Payment
+- [x] Service
 
 --- 
 

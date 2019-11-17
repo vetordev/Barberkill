@@ -5,6 +5,8 @@ import { Employee } from '../models/Employee';
 import { Address } from '../models/Address';
 import { Position } from '../models/Position';
 import { EmployeesPositions } from '../models/Employees_Positions';
+import { Service } from '../models/Service';
+import { Payment } from '../models/Payment';
 export class Database {
   
   database: Sequelize;
@@ -19,6 +21,8 @@ export class Database {
         Employee.start(this.database);
         Position.start(this.database)
         EmployeesPositions.start(this.database);
+        Service.start(this.database);
+        Payment.start(this.database);
 
         Employee.associate(this.database.models);
         Address.associate(this.database.models);
