@@ -8,6 +8,7 @@ class ServiceRouter {
     }
     applyRoutes() {
         this.application.post('/services', service_controller_1.ServiceController.store);
+        this.application.get('/services', service_controller_1.ServiceController.index);
         return this.application;
     }
     ;

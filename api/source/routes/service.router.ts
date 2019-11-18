@@ -7,6 +7,8 @@ class ServiceRouter implements Routers {
   applyRoutes(){  
 
     this.application.post('/services', ServiceController.store);
+    this.application.get('/services', ServiceController.index);
+    
     return this.application;
   };
 }

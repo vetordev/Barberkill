@@ -9,5 +9,10 @@ class ServiceController {
             console.log(error);
         });
     }
+    static index(req, res) {
+        Service_1.Service.findAll().then(services => {
+            return res.json(services);
+        });
+    }
 }
 exports.ServiceController = ServiceController;
