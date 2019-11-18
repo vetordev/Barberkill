@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true
       },
-      formOf_payment: {
+      form_of_payment: {
         type: Sequelize.STRING(70),
         allowNull: false
       },

@@ -3,8 +3,8 @@ import { Model, DataTypes, Sequelize } from 'sequelize';
 export class Schedule extends Model {
   static start(connection: Sequelize){
     this.init({
-      data: DataTypes.DATE,
-      horary: DataTypes.DATE,
+      date: DataTypes.STRING(8),
+      horary: DataTypes.STRING(4),
       observation: DataTypes.TEXT
     },{
       sequelize: connection,

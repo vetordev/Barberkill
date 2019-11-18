@@ -19,7 +19,7 @@ module.exports = {
         allowNull: false,
       },
       cpf: {
-        type: Sequelize.STRING(8),
+        type: Sequelize.STRING(11),
         allowNull: false,
       },
       telephone: {

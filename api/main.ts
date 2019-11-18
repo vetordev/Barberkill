@@ -5,10 +5,11 @@ import { addressRouter } from './source/routes/address.router';
 import { positionRouter } from './source/routes/position.router';
 import { serviceRouter } from './source/routes/service.router';
 import { paymentRouter } from './source/routes/payment.router';
+import { scheduleRouter } from './source/routes/schedule.router';
 
 
 const server = new Server();
-server.bootstrap([clientRouter, employeeRouter, addressRouter, positionRouter, serviceRouter, paymentRouter]).then(server => {
+server.bootstrap([clientRouter, employeeRouter, addressRouter, positionRouter, serviceRouter, paymentRouter, scheduleRouter]).then(server => {
   console.log('Server is listening on: 3002');
 }).catch(error => {
   console.log('Server failed to start');

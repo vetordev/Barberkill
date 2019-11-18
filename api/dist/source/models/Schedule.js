@@ -4,8 +4,8 @@ const sequelize_1 = require("sequelize");
 class Schedule extends sequelize_1.Model {
     static start(connection) {
         this.init({
-            data: sequelize_1.DataTypes.DATE,
-            horary: sequelize_1.DataTypes.DATE,
+            date: sequelize_1.DataTypes.STRING(8),
+            horary: sequelize_1.DataTypes.STRING(4),
             observation: sequelize_1.DataTypes.TEXT
         }, {
             sequelize: connection,

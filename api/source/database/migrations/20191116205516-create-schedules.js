@@ -10,11 +10,11 @@ module.exports = {
         autoIncrement: true
       },
       date: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING(8),
         allowNull: false
       },
       horary: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING(4),
         allowNull: false
       },
       client_id: {
