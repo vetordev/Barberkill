@@ -7,6 +7,8 @@ class PaymentRouter implements Routers {
   applyRoutes(){
 
     this.application.post('/payments', PaymentController.store);
+    this.application.get('/payments', PaymentController.index);
+    
     return this.application
   }
 }

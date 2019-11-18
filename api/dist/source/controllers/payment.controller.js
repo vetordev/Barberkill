@@ -9,5 +9,14 @@ class PaymentController {
             console.log(error);
         });
     }
+    static index(req, res) {
+        Payment_1.Payment.findAll({
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
+        }).then(payments => {
+            return res.json(payments);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
 }
 exports.PaymentController = PaymentController;

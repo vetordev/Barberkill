@@ -8,6 +8,7 @@ class PaymentRouter {
     }
     applyRoutes() {
         this.application.post('/payments', payment_controller_1.PaymentController.store);
+        this.application.get('/payments', payment_controller_1.PaymentController.index);
         return this.application;
     }
 }
