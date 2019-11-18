@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+div#precos {
+    width: 100%;
+    height: 100vh;
+    background: url('./img/background.png');
+    background-size: cover;
+    /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+div.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+div#price-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 60px;
+    background: url('./img/agenda.png');
+    background-size: cover;
+    width: 70%;
+    height: 90%;
+    z-index: 5;
+    font-family: 'Raleway', sans-serif;
+}
+div#price-table h1 {
+    font-size: 40px;
+    /* align-self: ; */
+    padding-bottom: 50px;
+}
+div#price-table p {
+    font-size: 26px;
+    text-align: center;
+    padding-bottom: 45px;
+    line-height: 35px;
+    width: 45%;
+    /* background: orangered; */
+}
+
+div#price-table p span {
+    font-size: 18px;
+    /* line-height: 10px; */
+    width: 20% !important;
+    /* background-color: black; */
+}

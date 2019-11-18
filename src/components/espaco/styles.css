@@ -1,30 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto:100&display=swap');
+
 div#espaco {
-    width: 100vw;
+    width: 100%;
     height: 200vh;
     position: relative;
     /* top: 100vh; */
-    background: rgb(39, 36, 36);
+    /* background: rgb(39, 36, 36); */
+    background: #4A4343;
     color: #FFF;
     padding: 0;
     margin: 0;
     padding-left: 14%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 div#espaco h1 {
-    padding: 50px 0 0 50px;
+    padding-top: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
 }
-
 div#espaco #cell-container #part1,#part2{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background: chartreuse; */
 }
 #part2 {
     margin-top: 7vh;
 }
 div.cell {
-    width: 90%;
+    width: 100%;
     /* background: #000; */
     height: 40vh;
     margin-top: 30px;
@@ -40,7 +46,7 @@ div#cell-container .cell .img-spc{
     background-size: cover;
     /* max-width: 500px;
     max-height: 100%; */
-    width: 50%;
+    width: 45%;
     height: 300px;
     /* margin: 10px */
 }
@@ -49,6 +55,25 @@ div#cell-container .cell .info-spc{
     font-size: 20px;
     text-align: center;
     padding: 0 20px;
+    /* background: blue; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+}
+
+div.cell1 .info-spc{
+    border-bottom: 5px /*rgb(48, 66, 170)*/ #2B2129 solid;
+    border-right: 5px #2B2129 solid;
+    /* border-radius: 5px; */
+}
+
+div.cell2 .info-spc{
+    border-bottom: 5px rgb(102, 18, 18) solid;
+    border-left: 5px rgb(102, 18, 18) solid;
+    /* border-radius: 5px; */
 }
 
 #img-1 {

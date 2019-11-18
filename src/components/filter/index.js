@@ -3,7 +3,7 @@ import React from 'react';
 import './styles.css';
 
 const Filter = () => (
-    <div></div>
+    <div id='filter'></div>
 );
 
 export default Filter;

@@ -5,6 +5,8 @@ import Banner from '../../components/banner';
 import Espaco from '../../components/espaco';
 import Portfolio from '../../components/portfolio';
 import Filter from '../../components/filter';
+import Precos from '../../components/precos';
+import Contato from '../../components/contato';
 
 export default class Main extends Component {
     render() {
@@ -13,8 +15,10 @@ export default class Main extends Component {
                 <Sidebar />
                 <Banner />
                 <Espaco />
-                <Portfolio />
                 <Filter />
+                <Portfolio />
+                <Precos />
+                <Contato />
             </div>
         )
     }

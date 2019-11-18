@@ -4,17 +4,14 @@ import './styles.css';
 
 const Portfolio = () => (
     <div id="portfolio">
-        <div className="no-filter">
-            
-            <div id="container-aux">
+        <div className="container-aux" id="aux-port">
             <h1>Portfólio</h1>
                 <div id="images-port">
                     <div id="img1"></div>
                     <div id="img2"></div>
                     {/* <img src="./img/image1.png" alt=""/> */}
                 </div>
-                <button>Ver mais</button>
-            </div>
+            <button>Ver mais</button>
         </div>
     </div>
 );
