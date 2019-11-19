@@ -7,6 +7,7 @@ export class Employee extends Model {
     this.init({
       name: DataTypes.STRING(100),
       email: DataTypes.STRING(100),
+      password: DataTypes.STRING(12),
       cpf: DataTypes.STRING(11),
       telephone: DataTypes.STRING(8),
       cellphone: DataTypes.STRING(11),

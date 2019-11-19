@@ -16,7 +16,7 @@ export class ScheduleController {
       attributes: {exclude: ['createdAt', 'updatedAt']},
       include: [
         {
-          association: 'employees', attributes: ['name']
+          association: 'employees', attributes: ['name'], 
         },
         {
           association: "services", attributes: ['service', "value"]
