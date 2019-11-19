@@ -17,7 +17,9 @@ export class ClientController {
 
   static index(req: express.Request, res: express.Response){
     
-    Client.findAll().then(clients => {
+    Client.findAll({
+      attributes: { exclude: ['createdAt', 'updatedAt'] }
+    }).then(clients => {
       return res.json(clients);
     }).catch(error => {
       console.log(error);

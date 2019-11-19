@@ -33,7 +33,9 @@ class PositionController {
         });
     }
     static index(req, res) {
-        Position_1.Position.findAll({}).then(position => {
+        Position_1.Position.findAll({
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
+        }).then(position => {
             return res.json(position);
         }).catch(error => {
             console.log(error);

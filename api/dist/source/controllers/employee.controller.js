@@ -20,7 +20,9 @@ class EmployeeController {
         });
     }
     static index(req, res) {
-        Employee_1.Employee.findAll().then(employees => {
+        Employee_1.Employee.findAll({
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
+        }).then(employees => {
             return res.json(employees);
         });
     }

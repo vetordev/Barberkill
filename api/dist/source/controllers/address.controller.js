@@ -7,5 +7,14 @@ class AddressController {
             return res.json(address);
         });
     }
+    static index(req, res) {
+        Address_1.Address.findAll({
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
+        }).then(addresses => {
+            return res.json(addresses);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
 }
 exports.AddressController = AddressController;

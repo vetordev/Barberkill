@@ -8,6 +8,7 @@ import { EmployeesPositions } from '../models/Employees_Positions';
 import { Service } from '../models/Service';
 import { Payment } from '../models/Payment';
 import { Schedule } from '../models/Schedule';
+
 export class Database {
   
   database: Sequelize;

@@ -12,7 +12,9 @@ class ClientController {
         });
     }
     static index(req, res) {
-        Client_1.Client.findAll().then(clients => {
+        Client_1.Client.findAll({
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
+        }).then(clients => {
             return res.json(clients);
         }).catch(error => {
             console.log(error);

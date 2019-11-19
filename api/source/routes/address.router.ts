@@ -7,8 +7,11 @@ class AddressRouter implements Routers {
   application: Router = Router();
 
   applyRoutes(){
-    this.application.post('/addresses', AddressController.store);
 
+    //Inserir um endereço
+    this.application.post('/addresses', AddressController.store);
+    //Buscar todos os endereços
+    this.application.get('/addresses', AddressController.index);
     return this.application;
   }
 }

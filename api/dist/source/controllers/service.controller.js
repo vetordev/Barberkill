@@ -10,7 +10,9 @@ class ServiceController {
         });
     }
     static index(req, res) {
-        Service_1.Service.findAll().then(services => {
+        Service_1.Service.findAll({
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
+        }).then(services => {
             return res.json(services);
         });
     }

@@ -31,7 +31,7 @@ export class PositionController {
   static index(req: express.Request, res: express.Response){
 
     Position.findAll({
-      
+      attributes: {exclude: ['createdAt', 'updatedAt']}
     }).then(position => {
       return res.json(position)
     }).catch(error => {

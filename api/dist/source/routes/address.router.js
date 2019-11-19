@@ -7,7 +7,10 @@ class AddressRouter {
         this.application = express_1.Router();
     }
     applyRoutes() {
+        //Inserir um endereço
         this.application.post('/addresses', address_controller_1.AddressController.store);
+        //Buscar todos os endereços
+        this.application.get('/addresses', address_controller_1.AddressController.index);
         return this.application;
     }
 }

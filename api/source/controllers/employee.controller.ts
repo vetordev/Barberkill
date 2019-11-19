@@ -25,7 +25,9 @@ export class EmployeeController{
 
   static index(req: express.Request, res: express.Response) {
 
-    Employee.findAll().then(employees => {
+    Employee.findAll({
+      attributes: {exclude: ['createdAt', 'updatedAt']}
+    }).then(employees => {
       return res.json(employees);
     });
   }
