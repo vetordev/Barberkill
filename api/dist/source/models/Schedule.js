@@ -16,8 +16,9 @@ class Schedule extends sequelize_1.Model {
         this.belongsTo(models.Client, { foreignKey: "client_id", as: 'clients' });
         this.belongsTo(models.Service, { foreignKey: "service_id", as: 'services' });
         this.belongsTo(models.Employee, { foreignKey: "employee_id", as: 'employees' });
+        this.hasOne(models.Attendance, { foreignKey: 'schedule_id', as: 'attendances' });
         // N <=> N
-        this.belongsToMany(models.Payment, { foreignKey: 'schedule_id', through: 'attendances', as: 'payment_sc' });
+        // this.belongsToMany(models.Payment, { foreignKey: 'schedule_id', through: 'attendances', as: 'payment_sc' });
     }
 }
 exports.Schedule = Schedule;

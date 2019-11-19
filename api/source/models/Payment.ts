@@ -11,6 +11,6 @@ export class Payment extends Model {
   }
 
   static associate(models: any){
-    this.belongsToMany(models.Schedule, { foreignKey: 'payment_id', through: 'attendances', as: 'schedule_pay' });
+    this.hasOne(models.Attendance, { foreignKey: 'payment_id', as: 'attendances' });
   }
 }

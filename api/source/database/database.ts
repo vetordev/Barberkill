@@ -7,6 +7,7 @@ import { Position } from '../models/Position';
 import { Service } from '../models/Service';
 import { Payment } from '../models/Payment';
 import { Schedule } from '../models/Schedule';
+import { Attendance } from '../models/Attendances';
 
 export class Database {
   
@@ -24,6 +25,7 @@ export class Database {
         Service.start(this.database);
         Payment.start(this.database);
         Schedule.start(this.database);
+        Attendance.start(this.database);
 
         Client.associate(this.database.models);
         Address.associate(this.database.models);
@@ -32,6 +34,7 @@ export class Database {
         Service.associate(this.database.models);
         Payment.associate(this.database.models);
         Schedule.associate(this.database.models);
+        Attendance.associate(this.database.models);
         
         resolve(this);
       }catch(error) {

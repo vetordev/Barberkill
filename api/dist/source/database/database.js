@@ -9,6 +9,7 @@ const Position_1 = require("../models/Position");
 const Service_1 = require("../models/Service");
 const Payment_1 = require("../models/Payment");
 const Schedule_1 = require("../models/Schedule");
+const Attendances_1 = require("../models/Attendances");
 class Database {
     start() {
         return new Promise((resolve, reject) => {
@@ -21,6 +22,7 @@ class Database {
                 Service_1.Service.start(this.database);
                 Payment_1.Payment.start(this.database);
                 Schedule_1.Schedule.start(this.database);
+                Attendances_1.Attendance.start(this.database);
                 Client_1.Client.associate(this.database.models);
                 Address_1.Address.associate(this.database.models);
                 Employee_1.Employee.associate(this.database.models);
@@ -28,6 +30,7 @@ class Database {
                 Service_1.Service.associate(this.database.models);
                 Payment_1.Payment.associate(this.database.models);
                 Schedule_1.Schedule.associate(this.database.models);
+                Attendances_1.Attendance.associate(this.database.models);
                 resolve(this);
             }
             catch (error) {
