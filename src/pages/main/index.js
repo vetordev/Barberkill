@@ -7,6 +7,7 @@ import Portfolio from '../../components/portfolio';
 import Filter from '../../components/filter';
 import Precos from '../../components/precos';
 import Contato from '../../components/contato';
+import Agendamento from '../../components/agendamento';
 
 export default class Main extends Component {
     render() {
@@ -18,6 +19,7 @@ export default class Main extends Component {
                 <Filter />
                 <Portfolio />
                 <Precos />
+                <Agendamento />
                 <Contato />
             </div>
         )

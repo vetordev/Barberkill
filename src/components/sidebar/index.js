@@ -32,7 +32,7 @@ const Sidebar = () => (
                         <p className="text-li">Agendamento</p>
                     </li>
                 </a>
-                <a href="#contatos">
+                <a href="#contato">
                     <li id="last-li">
                         <FontAwesomeIcon icon={faCut}/>
                         <p className="text-li">Contatos</p>
