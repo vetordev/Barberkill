@@ -23,7 +23,7 @@ export class Employee extends Model {
     this.belongsTo(models.Address,{
       foreignKey: 'cep_id', as: 'address'
     });
-    this.belongsToMany(models.Position, { foreignKey: 'employee_id', through: { model: models.EmployeesPositions }, as: 'positions' });
+    this.belongsToMany(models.Position, { foreignKey: 'employee_id', through: 'employees_positions', as: 'positions' });
     this.hasMany(models.Schedule, {
       foreignKey: 'employee_id', as: 'schedules'
     });

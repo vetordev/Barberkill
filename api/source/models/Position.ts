@@ -13,6 +13,6 @@ export class Position extends Model {
   }
 
   static associate(models: any){
-    this.belongsToMany(models.Employee, { foreignKey: 'position_id', through: { model: models.EmployeesPositions }, as: 'employees_ps'});
+    this.belongsToMany(models.Employee, { foreignKey: 'position_id', through: 'employees_positions', as: 'employees_ps'});
   }
 }
