@@ -6,10 +6,10 @@ class Client extends sequelize_1.Model {
         this.init({
             name: sequelize_1.DataTypes.STRING,
             email: sequelize_1.DataTypes.STRING,
+            password: sequelize_1.DataTypes.STRING(12),
             cpf: sequelize_1.DataTypes.STRING(11),
             telephone: sequelize_1.DataTypes.STRING,
             cellphone: sequelize_1.DataTypes.STRING,
-            password: sequelize_1.DataTypes.STRING
         }, {
             sequelize: connection,
             modelName: 'Client'

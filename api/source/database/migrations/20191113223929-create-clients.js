@@ -18,6 +18,10 @@ module.exports = {
         type: Sequelize.STRING(100),
         allowNull: false,
       },
+      password: {
+        type: Sequelize.STRING(12),
+        allowNull: false
+      },
       cpf: {
         type: Sequelize.STRING(11),
         allowNull: false,
@@ -32,11 +36,11 @@ module.exports = {
       },
       created_at: {
         type : Sequelize.DATE,
-        allowNull: false,
+        allowNull: true,
       },
       updated_at: {
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: true
       }
     });
     

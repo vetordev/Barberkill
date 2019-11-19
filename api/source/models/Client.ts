@@ -7,10 +7,10 @@ export class Client extends Model{
         this.init({
             name: DataTypes.STRING,
             email: DataTypes.STRING,
+            password: DataTypes.STRING(12),
             cpf: DataTypes.STRING(11),
             telephone: DataTypes.STRING,
             cellphone: DataTypes.STRING,
-            password: DataTypes.STRING
         },
         {
             sequelize: connection,

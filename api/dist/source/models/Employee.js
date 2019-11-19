@@ -6,7 +6,6 @@ class Employee extends sequelize_1.Model {
         this.init({
             name: sequelize_1.DataTypes.STRING(100),
             email: sequelize_1.DataTypes.STRING(100),
-            password: sequelize_1.DataTypes.STRING(12),
             cpf: sequelize_1.DataTypes.STRING(11),
             telephone: sequelize_1.DataTypes.STRING(8),
             cellphone: sequelize_1.DataTypes.STRING(11),
