@@ -15,4 +15,4 @@ class EmployeeRouter implements Routers {
   };
 }
 
-export const employeeRouter = new EmployeeRouter();
+export const employeeRouter = new EmployeeRouter(); 

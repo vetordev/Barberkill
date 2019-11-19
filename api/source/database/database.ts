@@ -4,7 +4,6 @@ import { Client } from '../models/Client';
 import { Employee } from '../models/Employee';
 import { Address } from '../models/Address';
 import { Position } from '../models/Position';
-import { EmployeesPositions } from '../models/Employees_Positions';
 import { Service } from '../models/Service';
 import { Payment } from '../models/Payment';
 import { Schedule } from '../models/Schedule';
@@ -22,7 +21,6 @@ export class Database {
         Address.start(this.database);
         Employee.start(this.database);
         Position.start(this.database)
-        EmployeesPositions.start(this.database);
         Service.start(this.database);
         Payment.start(this.database);
         Schedule.start(this.database);

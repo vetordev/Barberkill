@@ -17,17 +17,17 @@
 --- 
 
 **Routes**
-- [ ] Schedule
-- [ ] Attendances
-- [ ] Payment
+- [x] Schedule
+- [x] Attendances
+- [x] Payment
 - [x] Service
 
 ---
 
 **Controllers**
-- [ ] Schedule
-- [ ] Attendances
-- [ ] Payment
+- [x] Schedule
+- [x] Attendances
+- [x] Payment
 - [x] Service
 
 ---
