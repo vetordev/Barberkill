@@ -15,5 +15,7 @@ export class Service extends Model {
     this.hasMany(models.Schedule, {
       foreignKey: 'service_id', as: 'schedules'
     });
+
+    this.belongsTo(models.Position, { foreignKey: 'position_id', as: 'positions' });
   }
 }

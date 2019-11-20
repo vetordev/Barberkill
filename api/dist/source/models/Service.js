@@ -15,6 +15,7 @@ class Service extends sequelize_1.Model {
         this.hasMany(models.Schedule, {
             foreignKey: 'service_id', as: 'schedules'
         });
+        this.belongsTo(models.Position, { foreignKey: 'position_id', as: 'positions' });
     }
 }
 exports.Service = Service;

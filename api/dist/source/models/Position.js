@@ -13,6 +13,7 @@ class Position extends sequelize_1.Model {
     }
     static associate(models) {
         this.belongsToMany(models.Employee, { foreignKey: 'position_id', through: 'employees_positions', as: 'employees_ps' });
+        this.hasMany(models.Service, { foreignKey: 'position_id', as: 'services' });
     }
 }
 exports.Position = Position;

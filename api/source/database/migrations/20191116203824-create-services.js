@@ -16,7 +16,14 @@ module.exports = {
       value: {
         type: Sequelize.FLOAT,
         allowNull: false
-      } ,
+      },
+      position_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'positions', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
       created_at: {
         type : Sequelize.DATE,
         allowNull: true,

@@ -14,5 +14,6 @@ export class Position extends Model {
 
   static associate(models: any){
     this.belongsToMany(models.Employee, { foreignKey: 'position_id', through: 'employees_positions', as: 'employees_ps'});
+    this.hasMany(models.Service, { foreignKey: 'position_id', as: 'services' });
   }
 }
