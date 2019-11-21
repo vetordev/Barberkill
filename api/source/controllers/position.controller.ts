@@ -1,9 +1,9 @@
-import * as express from 'express';
+import { Request, Response } from 'express';
 import { Position } from '../models/Position';
 import { Employee } from '../models/Employee';
 
 export class PositionController {
-   static async store(req: express.Request, res: express.Response){
+   static async store(req: Request, res: Response){
 
     const { employee_id } = req.params;
     const { position, salary } = req.body;
@@ -28,7 +28,7 @@ export class PositionController {
     
   }
 
-  static index(req: express.Request, res: express.Response){
+  static index(req: Request, res: Response){
 
     Position.findAll({
       attributes: {exclude: ['createdAt', 'updatedAt']}
@@ -39,7 +39,7 @@ export class PositionController {
     })
   }
 
-  static show(req: express.Request, res: express.Response){
+  static show(req: Request, res: Response){
 
     Position.findAll({
       attributes: { exclude: ['createdAt', 'updatedAt'] },
