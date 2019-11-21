@@ -41,7 +41,10 @@ export class PositionController {
 
   static show(req: Request, res: Response){
 
-    Position.findAll({
+    const { position } = req.headers;
+
+    Position.findOne({
+      where: { position },
       attributes: { exclude: ['createdAt', 'updatedAt'] },
       include: [
         {

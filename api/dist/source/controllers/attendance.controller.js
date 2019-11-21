@@ -16,5 +16,24 @@ class AttendanceController {
             console.log(error);
         });
     }
+    static showAllData(req, res) {
+        Attendances_1.Attendance.findAll({
+            attributes: ['id'],
+            include: [
+                {
+                    association: 'schedules',
+                    attributes: ['id', 'date', 'horary', 'observation'],
+                },
+                {
+                    association: 'payments',
+                    attributes: ['form_of_payment'],
+                }
+            ]
+        }).then(attendances => {
+            return res.json(attendances);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
 }
 exports.AttendanceController = AttendanceController;

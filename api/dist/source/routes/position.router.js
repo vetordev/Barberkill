@@ -12,7 +12,7 @@ class PositionRouter {
         //Buscando todos
         this.application.get('/positions', position_controller_1.PositionController.index);
         //Mostrando as positions de um employee
-        this.application.get('/employees/:employee_id/positions/services', position_controller_1.PositionController.show);
+        this.application.get('/employees/services/positions', position_controller_1.PositionController.show);
         return this.application;
     }
 }

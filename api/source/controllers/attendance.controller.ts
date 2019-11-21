@@ -1,5 +1,6 @@
 import { Attendance } from "../models/Attendances";
 import { Request, Response } from 'express';
+import { Schedule } from "../models/Schedule";
 
 export class AttendanceController {
   static store(req: Request, res: Response){
@@ -17,5 +18,27 @@ export class AttendanceController {
     }).catch(error =>{
       console.log(error);
     })
+  }
+
+  static showAllData(req: Request, res: Response){
+    Attendance.findAll({
+      attributes: ['id'],
+      include: [
+        {
+          association: 'schedules',
+          attributes: ['id','date', 'horary', 'observation'],
+        },
+        {
+          association: 'payments',
+          attributes: ['form_of_payment'],
+        }
+      ]
+    }).then(attendances => {
+      return res.json(attendances);
+    }).catch(error => {
+      console.log(error);
+    });
+
+    
   }
 }

@@ -11,6 +11,8 @@ class AttendanceRouter implements Routers {
     this.application.post('/attendances', AttendanceController.store);
     //Buscar todos
     this.application.get('/attendances', AttendanceController.index);
+
+    this.application.get('/schedule/payments/attendaces', AttendanceController.showAllData);
     return this.application;
   }
 }
