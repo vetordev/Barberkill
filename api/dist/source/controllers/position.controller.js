@@ -42,18 +42,23 @@ class PositionController {
         });
     }
     static show(req, res) {
-        const { employee_id } = req.params;
-        Employee_1.Employee.findByPk(employee_id, {
+        Position_1.Position.findAll({
             attributes: { exclude: ['createdAt', 'updatedAt'] },
             include: [
                 {
-                    association: 'positions',
-                    attributes: ['position', 'salary'],
-                    through: { attributes: [] }
+                    association: 'employees',
+                    attributes: ['name'],
+                    through: { attributes: [] },
+                },
+                {
+                    association: 'services',
+                    attributes: ['service', 'value']
                 }
             ]
-        }).then(employee => {
-            return res.json(employee);
+        }).then(position => {
+            return res.json(position);
+        }).catch(error => {
+            console.log(error);
         });
     }
 }

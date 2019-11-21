@@ -7,7 +7,10 @@ class AttendanceRouter {
         this.application = express_1.Router();
     }
     applyRoutes() {
+        //Criar um attendance
         this.application.post('/attendances', attendance_controller_1.AttendanceController.store);
+        //Buscar todos
+        this.application.get('/attendances', attendance_controller_1.AttendanceController.index);
         return this.application;
     }
 }

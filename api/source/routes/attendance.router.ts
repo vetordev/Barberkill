@@ -7,8 +7,10 @@ class AttendanceRouter implements Routers {
 
   applyRoutes(){
 
+    //Criar um attendance
     this.application.post('/attendances', AttendanceController.store);
-
+    //Buscar todos
+    this.application.get('/attendances', AttendanceController.index);
     return this.application;
   }
 }

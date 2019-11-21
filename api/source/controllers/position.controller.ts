@@ -41,18 +41,25 @@ export class PositionController {
 
   static show(req: express.Request, res: express.Response){
 
-    const { employee_id } = req.params;
-    Employee.findByPk(employee_id,{
-      attributes: { exclude: ['createdAt', 'updatedAt']},
+    Position.findAll({
+      attributes: { exclude: ['createdAt', 'updatedAt'] },
       include: [
         {
-          association: 'positions',
-          attributes: ['position', 'salary'],
-          through: { attributes: [] }
+          association: 'employees',
+          attributes: ['name'],
+          through: { attributes: [] },
+        },
+        {
+          association: 'services',
+          attributes: ['service', 'value']
         }
       ]
-    }).then(employee => {
-      return res.json(employee)
+    }).then(position => {
+      return res.json(position);
+    }).catch(error => {
+      console.log(error);
     });
   }
+
+  
 }
