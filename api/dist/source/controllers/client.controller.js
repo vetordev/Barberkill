@@ -20,5 +20,17 @@ class ClientController {
             console.log(error);
         });
     }
+    static existsEmail(req, res) {
+        const { email } = req.body;
+        Client_1.Client.findOne({
+            where: { email }
+        }).then(client => {
+            if (client === null)
+                return res.status(400).json({ client: "not exists" });
+            return res.json(client);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
 }
 exports.ClientController = ClientController;

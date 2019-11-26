@@ -11,6 +11,8 @@ class ClientRouter {
         this.application.get('/clients', client_controller_1.ClientController.index);
         //inserir um cliene
         this.application.post('/clients', client_controller_1.ClientController.store);
+        //Rota para verificar se um email existe
+        this.application.get('/clients/email', client_controller_1.ClientController.existsEmail);
         return this.application;
     }
 }

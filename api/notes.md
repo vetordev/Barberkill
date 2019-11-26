@@ -33,8 +33,15 @@
 ---
 
 ## Funções de tabelas específicas
-**Positions**
-- [ ] Alterar uma position de um employee
-- [ ] Alterar dados de uma position
-- [ ] Deletar uma position
-- [ ] Deletar uma positon de um employee
+
+Serviços
+- [x] buscar funcionários q fazem serviço escolhido  `falta o where`
+
+Cliente
+- [x] buscar existência de e-mail
+- [x] realizar login
+- [x] verificar login
+- [x] realizar cadastro
+
+Cliente agendando serviço
+- [x] salvar agendamento
