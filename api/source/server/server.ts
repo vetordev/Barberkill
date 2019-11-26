@@ -1,7 +1,7 @@
 import { Database } from '../database/database'
 import * as express from 'express';
 import { Routers } from '../config/Router';
-import * as cors from 'cors';
+const cors = require('cors');
 
 export class Server {
 
