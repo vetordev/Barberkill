@@ -42,7 +42,9 @@ class PositionController {
         });
     }
     static show(req, res) {
-        Position_1.Position.findAll({
+        const { position } = req.headers;
+        Position_1.Position.findOne({
+            where: { position },
             attributes: { exclude: ['createdAt', 'updatedAt'] },
             include: [
                 {

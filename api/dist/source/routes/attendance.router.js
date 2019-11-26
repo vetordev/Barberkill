@@ -11,6 +11,7 @@ class AttendanceRouter {
         this.application.post('/attendances', attendance_controller_1.AttendanceController.store);
         //Buscar todos
         this.application.get('/attendances', attendance_controller_1.AttendanceController.index);
+        this.application.get('/schedule/payments/attendaces', attendance_controller_1.AttendanceController.showAllData);
         return this.application;
     }
 }

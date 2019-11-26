@@ -29,5 +29,13 @@ class ScheduleController {
             console.log(error);
         });
     }
+    static show(req, res) {
+        const { schedule_id } = req.params;
+        Schedule_1.Schedule.findByPk(schedule_id).then(schedule => {
+            return res.json(schedule);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
 }
 exports.ScheduleController = ScheduleController;

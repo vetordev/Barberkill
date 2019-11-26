@@ -13,7 +13,7 @@ class PositionRouter implements Routers{
    this.application.get('/positions', PositionController.index);
 
    //Mostrando as positions de um employee
-   this.application.get('/employees/:employee_id/positions/services', PositionController.show);
+   this.application.get('/employees/services/positions', PositionController.show);
 
     return this.application;
    }
