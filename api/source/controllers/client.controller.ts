@@ -16,7 +16,7 @@ export class ClientController {
   }
 
   static index(req: Request, res: Response){
-    
+  
     Client.findAll({
       attributes: { exclude: ['createdAt', 'updatedAt'] }
     }).then(clients => {

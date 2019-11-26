@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = require("../database/database");
 const express = require("express");
+const cors = require("cors");
 class Server {
     initializeDB() {
         return new Promise((resolve, reject) => {
@@ -18,6 +19,7 @@ class Server {
         return new Promise((resolve, reject) => {
             try {
                 this.app = express();
+                this.app.use(cors());
                 this.app.use(express.json());
                 for (let router of routers) {
                     this.app.use(router.applyRoutes());
