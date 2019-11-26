@@ -1,6 +1,7 @@
 import { Database } from '../database/database'
 import * as express from 'express';
 import { Routers } from '../config/Router';
+import * as cors from 'cors';
 
 export class Server {
 
@@ -23,6 +24,7 @@ export class Server {
       try {
         this.app = express();
 
+        this.app.use(cors());
         this.app.use(express.json());
 
         for (let router of routers){
