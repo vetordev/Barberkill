@@ -1,0 +1,45 @@
+div#agendamento h1 {
+    color: #FFF;
+    padding-bottom: 30px;
+}
+div#agendamento select {
+    border: none;
+    border-radius: 4px;
+    padding: 7px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+} 
+div#agendamento select {
+    margin-bottom: 10px;
+    height: 40px;
+    width: 350px;
+}
+textarea {
+    resize: none;
+    width: 450px;
+    height: 300px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+div#aux-agend {
+    background: rgba(0, 0, 0, 0.637);
+    width: 60%;
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+div.timer-container {
+    /* background: yellow; */
+    width: 300px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    /* flex-direction: column; */
+}
+button.btn-smaller {
+    margin-top: 30px;
+}

@@ -6,10 +6,16 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
-    "react": "^16.12.0",
+    "axios": "^0.19.0",
+    "ciqu-react-calendar": "^1.0.2",
+    "input-moment": "^0.4.0",
+    "json-loader": "^0.5.7",
+    "rc-time-picker": "^4.0.0-alpha.2",
     "react-datepicker2": "^3.0.3",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-picky-date-time": "^1.3.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "react-timepicker": "^2.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,5 +37,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-times": "^3.1.12"
   }
 }
