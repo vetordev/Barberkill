@@ -18,21 +18,22 @@ export default function Agnd2() {
 
         const dados = response.data;
 
-        // var a = dados.map.has(emaill);
-        for (var i = 0; i < response.data.length; i++) {
+        console.log(dados)
+        alert(dados.email);
+        //for (var i = 0; i < response.data.length; i++) {
             // console.log(response.data[i].email);
-            if (email == dados[i].email)
-            { 
-                // alert("Encontrado!");
-                i = 0;
-                break;
-            }
-            else
-            {
-                // alert("Não encontrado");
-                i = 1;
-            } 
-        }
+       //     if (email == dados[i].email)
+      //      { 
+                // alert("Encontrado!"); 
+        //         i = 0;
+        //         break;
+        //     }
+        //     else
+        //     {
+        //         alert("Não encontrado");
+        //         i = 1;
+        //     } 
+        // }
 
         
     }
