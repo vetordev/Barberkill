@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = require("../database/database");
 const express = require("express");
 const cors = require("cors");
+const enviroment_1 = require("../config/enviroment");
 class Server {
     initializeDB() {
         return new Promise((resolve, reject) => {
@@ -27,7 +28,7 @@ class Server {
                 this.app.get('/', (req, res, next) => {
                     res.json({ connected: true });
                 });
-                this.app.listen(3002, () => {
+                this.app.listen(enviroment_1.enviroment.server.port, () => {
                     resolve(this.app);
                 });
             }

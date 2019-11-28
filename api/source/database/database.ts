@@ -1,5 +1,4 @@
 import { Sequelize } from 'sequelize';
-import { dbConfig } from '../config/database';
 import { Client } from '../models/Client';
 import { Employee } from '../models/Employee';
 import { Address } from '../models/Address';
@@ -8,6 +7,7 @@ import { Service } from '../models/Service';
 import { Payment } from '../models/Payment';
 import { Schedule } from '../models/Schedule';
 import { Attendance } from '../models/Attendances';
+import { enviroment } from '../config/enviroment';
 
 export class Database {
   
@@ -16,7 +16,7 @@ export class Database {
   start(): Promise<Database>{
     return new Promise((resolve, reject) => {
       try {
-        this.database = new Sequelize(dbConfig);
+        this.database = new Sequelize(enviroment.db);
 
         Client.start(this.database);
         Address.start(this.database);

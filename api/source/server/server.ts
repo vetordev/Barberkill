@@ -2,6 +2,7 @@ import { Database } from '../database/database'
 import * as express from 'express';
 import { Routers } from '../config/Router';
 import * as cors from 'cors';
+import { enviroment } from '../config/enviroment';
 
 export class Server {
 
@@ -35,7 +36,7 @@ export class Server {
           res.json({connected : true});
         });
 
-        this.app.listen(3002, () => {
+        this.app.listen(enviroment.server.port, () => {
           resolve(this.app);
         });
       } catch (error) {

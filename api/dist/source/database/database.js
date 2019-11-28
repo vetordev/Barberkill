@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
-const database_1 = require("../config/database");
 const Client_1 = require("../models/Client");
 const Employee_1 = require("../models/Employee");
 const Address_1 = require("../models/Address");
@@ -10,11 +9,12 @@ const Service_1 = require("../models/Service");
 const Payment_1 = require("../models/Payment");
 const Schedule_1 = require("../models/Schedule");
 const Attendances_1 = require("../models/Attendances");
+const enviroment_1 = require("../config/enviroment");
 class Database {
     start() {
         return new Promise((resolve, reject) => {
             try {
-                this.database = new sequelize_1.Sequelize(database_1.dbConfig);
+                this.database = new sequelize_1.Sequelize(enviroment_1.enviroment.db);
                 Client_1.Client.start(this.database);
                 Address_1.Address.start(this.database);
                 Employee_1.Employee.start(this.database);
