@@ -17,6 +17,7 @@ module.exports = {
       email: {
         type: Sequelize.STRING(100),
         allowNull: false,
+        unique: true
       },
       password: {
         type: Sequelize.STRING(12),
@@ -25,6 +26,7 @@ module.exports = {
       cpf: {
         type: Sequelize.STRING(11),
         allowNull: false,
+        unique: true
       },
       telephone: {
         type: Sequelize.STRING,
