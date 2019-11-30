@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon dist/main.js",
-    "go": "node dist/main.js"
+    "start": "node dist/main.js"
   },
   "dependencies": {
     "@types/express": "^4.17.2",

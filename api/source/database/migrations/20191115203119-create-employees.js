@@ -16,11 +16,13 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING(100),
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       cpf: {
         type: Sequelize.STRING(11),
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       telephone: {
         type: Sequelize.STRING(8),
@@ -32,7 +34,8 @@ module.exports = {
       },
       rg: {
         type: Sequelize.STRING(15),
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       cep_id: {
         type: Sequelize.STRING,
