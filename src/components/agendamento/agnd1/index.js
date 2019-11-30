@@ -50,7 +50,7 @@ export default function Agnd1 () {
                     <Timer />
                 </div>
             <Link to={ link }>
-                <button class="btn-smaller" onClick={ goNext }>Avançar</button>
+                <button class="btn-smaller" onClick={ goNext }></button>
             </Link>
         </div>
     );
