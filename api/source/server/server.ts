@@ -3,7 +3,6 @@ import * as express from 'express';
 import { Routers } from '../config/Router';
 import * as cors from 'cors';
 import { enviroment } from '../config/enviroment';
-
 export class Server {
 
   database: Database;
@@ -28,7 +27,7 @@ export class Server {
         
         this.app.use(cors());
         this.app.use(express.json());
-
+        this.app.use(express.urlencoded());
         for (let router of routers){
           this.app.use(router.applyRoutes());
         }
@@ -54,3 +53,4 @@ export class Server {
     
   }
 }
+

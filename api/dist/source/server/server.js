@@ -22,6 +22,7 @@ class Server {
                 this.app = express();
                 this.app.use(cors());
                 this.app.use(express.json());
+                this.app.use(express.urlencoded());
                 for (let router of routers) {
                     this.app.use(router.applyRoutes());
                 }
