@@ -14,7 +14,7 @@ class MyCalendar extends React.Component {
   }
 
   onChange = (value, inputValue) => {
-    console.log(value.format('YYYY-MM-DD'))
+    localStorage.setItem('date', value.format('DD-MM-YYYY'))
     this.setState({value})
   }
 
