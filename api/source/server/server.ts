@@ -8,6 +8,7 @@ export class Server {
 
   database: Database;
   app: express.Application;
+  port: number
 
   initializeDB(): Promise<Database>{
     return new Promise((resolve, reject) => {
@@ -24,7 +25,7 @@ export class Server {
     return new Promise((resolve, reject) => {
       try {
         this.app = express();
-
+        
         this.app.use(cors());
         this.app.use(express.json());
 
@@ -36,9 +37,10 @@ export class Server {
           res.json({connected : true});
         });
 
-        this.app.listen(enviroment.server.port, () => {
+        this.app.listen(enviroment.server.port, server => {
           resolve(this.app);
         });
+        
       } catch (error) {
         reject(error);
       }

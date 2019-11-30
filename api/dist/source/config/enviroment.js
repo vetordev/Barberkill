@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv = require("dotenv");
+dotenv.config();
 exports.enviroment = {
     server: {
-        port: process.env.PORT || 3002,
+        port: process.env.PORT_URL || 3002,
     },
     db: {
         dialect: 'postgres',

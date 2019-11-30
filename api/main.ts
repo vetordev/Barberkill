@@ -7,11 +7,14 @@ import { serviceRouter } from './source/routes/service.router';
 import { paymentRouter } from './source/routes/payment.router';
 import { scheduleRouter } from './source/routes/schedule.router';
 import { attendanceRouter } from './source/routes/attendance.router';
+import { enviroment } from './source/config/enviroment';
+
+
 
 
 const server = new Server();
 server.bootstrap([clientRouter, employeeRouter, addressRouter, positionRouter, serviceRouter, paymentRouter, scheduleRouter, attendanceRouter]).then(server => {
-  console.log('Server is listening on: 3002');
+  console.log(`Server is listening on ${enviroment.server.port}`)
 }).catch(error => {
   console.log('Server failed to start');
   console.log(error);

@@ -28,7 +28,7 @@ class Server {
                 this.app.get('/', (req, res, next) => {
                     res.json({ connected: true });
                 });
-                this.app.listen(enviroment_1.enviroment.server.port, () => {
+                this.app.listen(enviroment_1.enviroment.server.port, server => {
                     resolve(this.app);
                 });
             }
