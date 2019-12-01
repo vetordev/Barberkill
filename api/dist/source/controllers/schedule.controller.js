@@ -37,5 +37,15 @@ class ScheduleController {
             console.log(error);
         });
     }
+    static update(req, res) {
+        const schedule_id = req.params;
+        Schedule_1.Schedule.update(req.body, {
+            where: { schedule_id }
+        }).then(schedule => {
+            return res.json(schedule);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
 }
 exports.ScheduleController = ScheduleController;

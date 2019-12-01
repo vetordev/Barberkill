@@ -10,7 +10,7 @@ module.exports = {
         autoIncrement: true
       },
       date: {
-        type: Sequelize.STRING(8),
+        type: Sequelize.STRING(10),
         allowNull: false
       },
       horary: {

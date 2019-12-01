@@ -9,6 +9,7 @@ class ScheduleRouter {
     applyRoutes() {
         this.application.post('/schedules', schedule_controller_1.ScheduleController.store);
         this.application.get('/schedules', schedule_controller_1.ScheduleController.index);
+        this.application.get('/schedules/:schedule_id', schedule_controller_1.ScheduleController.show);
         return this.application;
     }
 }
