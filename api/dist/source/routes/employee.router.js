@@ -13,6 +13,8 @@ class EmployeeRouter {
         this.application.get('/employees', employee_controller_1.EmployeeController.index);
         //Mostrar um
         this.application.get('/employees/:id', employee_controller_1.EmployeeController.show);
+        //Mostrar os serviços de um employee
+        this.application.get('/employees/:id/services', employee_controller_1.EmployeeController.showServices);
         return this.application;
     }
     ;

@@ -1,10 +1,11 @@
-import * as express from 'express';
+import { Request, Response } from 'express';
 import { Employee } from '../models/Employee';
 import { Address } from '../models/Address';
+import { Position } from '../models/Position';
 
 
 export class EmployeeController{
-  static store(req: express.Request, res: express.Response){
+  static store(req: Request, res: Response){
     
     const { cep_id } = req.params;
     const { name, email, cpf, telephone, cellphone, rg, num_address, comp_address } = req.body;
@@ -23,7 +24,7 @@ export class EmployeeController{
     });
   }
 
-  static index(req: express.Request, res: express.Response) {
+  static index(req: Request, res: Response) {
 
     Employee.findAll({
       attributes: {exclude: ['createdAt', 'updatedAt']}
@@ -32,7 +33,7 @@ export class EmployeeController{
     });
   }
 
-  static show(req: express.Request, res: express.Response){
+  static show(req: Request, res: Response){
 
     const { id } = req.params;
     Employee.findByPk(id, {
@@ -54,5 +55,29 @@ export class EmployeeController{
       console.log(error);
     });
     
+  }
+
+  static showServices(req: Request, res: Response){
+    const { id } = req.params;
+
+    Position.findOne({
+      attributes: [],
+      include: [
+        {
+          association: 'employees',
+          attributes: ['name'],
+          through: { attributes: [] },
+          where: { id }
+        },
+        {
+          association: 'services',
+          attributes: ['service', 'value']
+        }
+      ]
+    }).then(position => {
+      return res.json(position);
+    }).catch(error => {
+      console.log(error);
+    });
   }
 }

@@ -30,17 +30,17 @@ class ScheduleController {
         });
     }
     static show(req, res) {
-        const { schedule_id } = req.params;
-        Schedule_1.Schedule.findByPk(schedule_id).then(schedule => {
+        const { id } = req.params;
+        Schedule_1.Schedule.findByPk(id).then(schedule => {
             return res.json(schedule);
         }).catch(error => {
             console.log(error);
         });
     }
     static update(req, res) {
-        const schedule_id = req.params;
+        const { id } = req.params;
         Schedule_1.Schedule.update(req.body, {
-            where: { schedule_id }
+            where: { id }
         }).then(schedule => {
             return res.json(schedule);
         }).catch(error => {

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Employee_1 = require("../models/Employee");
 const Address_1 = require("../models/Address");
+const Position_1 = require("../models/Position");
 class EmployeeController {
     static store(req, res) {
         const { cep_id } = req.params;
@@ -40,6 +41,28 @@ class EmployeeController {
             if (employee === null)
                 return res.status(404).json({ error: 'User not found' });
             return res.json(employee);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+    static showServices(req, res) {
+        const { id } = req.params;
+        Position_1.Position.findOne({
+            attributes: [],
+            include: [
+                {
+                    association: 'employees',
+                    attributes: ['name'],
+                    through: { attributes: [] },
+                    where: { id }
+                },
+                {
+                    association: 'services',
+                    attributes: ['service', 'value']
+                }
+            ]
+        }).then(position => {
+            return res.json(position);
         }).catch(error => {
             console.log(error);
         });

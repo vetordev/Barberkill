@@ -11,6 +11,9 @@ class EmployeeRouter implements Routers {
     this.application.get('/employees', EmployeeController.index);
     //Mostrar um
     this.application.get('/employees/:id', EmployeeController.show);
+
+    //Mostrar os serviços de um employee
+    this.application.get('/employees/:id/services', EmployeeController.showServices);
     return this.application;
   };
 }
