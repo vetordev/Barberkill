@@ -9,6 +9,8 @@ class ServiceRouter {
     applyRoutes() {
         this.application.post('/services', service_controller_1.ServiceController.store);
         this.application.get('/services', service_controller_1.ServiceController.index);
+        //Mostrar os employees que fazem tal service
+        this.application.get('/services/employees', service_controller_1.ServiceController.showEmployees);
         return this.application;
     }
     ;

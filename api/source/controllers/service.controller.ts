@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { Service } from '../models/Service';
+import { Position } from '../models/Position';
 
 export class ServiceController {
   static store(req: Request, res: Response){
@@ -16,6 +17,32 @@ export class ServiceController {
       
     }).then(services => {
       return res.json(services);
+    });
+  }
+  static showEmployees(req: Request, res: Response){
+
+    const { service } = req.headers;
+
+    Position.findOne({
+      attributes: [],
+      include: [
+        {
+          association: 'employees',
+          attributes: ['name'],
+          through: { attributes: [] },
+        },
+        {
+          association: 'services',
+          attributes: ['service', 'value'],
+          where: { service }
+          //Requirido que ele tenha tal serviço
+          
+        }
+      ]
+    }).then(position => {
+      return res.json(position);
+    }).catch(error => {
+      console.log(error);
     });
   }
 }

@@ -8,7 +8,9 @@ class ServiceRouter implements Routers {
 
     this.application.post('/services', ServiceController.store);
     this.application.get('/services', ServiceController.index);
-    
+
+    //Mostrar os employees que fazem tal service
+    this.application.get('/services/employees', ServiceController.showEmployees);
     return this.application;
   };
 }
