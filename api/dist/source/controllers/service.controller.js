@@ -24,7 +24,7 @@ class ServiceController {
             include: [
                 {
                     association: 'employees',
-                    attributes: ['name'],
+                    attributes: ['id', 'name'],
                     through: { attributes: [] },
                 },
                 {
