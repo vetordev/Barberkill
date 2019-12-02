@@ -12,7 +12,7 @@ class ServiceController {
     }
     static index(req, res) {
         Service_1.Service.findAll({
-            attributes: { exclude: ['createdAt', 'updatedAt'] }
+            attributes: ['service', 'value'],
         }).then(services => {
             return res.json(services);
         });
@@ -29,7 +29,7 @@ class ServiceController {
                 },
                 {
                     association: 'services',
-                    attributes: ['service', 'value'],
+                    attributes: { exclude: ['createdAt', 'updatedAt'] },
                     where: { service },
                 }
             ]
