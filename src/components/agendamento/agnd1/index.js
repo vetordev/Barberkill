@@ -27,7 +27,8 @@ export default function Agnd1() {
     async function handleServiceSelected(service) {
         setServiceSelected(service);
         localStorage.setItem('service', service);
-
+        localStorage.setItem('employee', 'any');
+        
         const serviceLocal = localStorage.getItem('service');
         const responseEmployees = await api.get('/services/employees', 
             { 
@@ -53,22 +54,22 @@ export default function Agnd1() {
     }
 
     return (
-        <div className="container-aux" id="aux-agend">
+        <div className="container-aux" id="aux-agend" onLoad={ requiredDB }>
             <h1>Agendamento</h1>
 
                 <select onClick={event => handleServiceSelected(event.target.value)}>
                     <option value="">Serviço que deseja</option>
                     {services.map(service => (
-                        <option key={service.id} value={service.service}>
+                        <option key={service.id} value={service.id}>
                             {service.service}
                         </option>
                     ))}
                 </select>
 
                 <select onClick={event => handleEmployeeSelected(event.target.value)}>
-                    <option value="" key="any">Qualquer Funcionário</option>
+                    <option value="any" key="any">Qualquer Funcionário</option>
                     {employees.map(employee => (
-                        <option key={employee.id} value={employee.name}>
+                        <option key={employee.id} value={employee.id}>
                             {employee.name}
                         </option>
                     ))}
@@ -79,7 +80,7 @@ export default function Agnd1() {
                     <Timer />
                 </div>
             <Link to={ link }>
-                <button class="btn-smaller" onClick={ goNext }></button>
+                <button class="btn-smaller" onClick={ goNext }>Avançar</button>
             </Link>
         </div>
     );
