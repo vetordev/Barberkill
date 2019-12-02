@@ -30,8 +30,7 @@ class ServiceController {
                 {
                     association: 'services',
                     attributes: ['service', 'value'],
-                    where: { service }
-                    //Requirido que ele faça tal serviço
+                    where: { service },
                 }
             ]
         }).then(position => {

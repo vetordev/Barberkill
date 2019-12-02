@@ -34,9 +34,9 @@ export class ServiceController {
         {
           association: 'services',
           attributes: ['service', 'value'],
-          where: { service }
+          where: { service },
+
           //Requirido que ele faça tal serviço
-          
         }
       ]
     }).then(position => {
