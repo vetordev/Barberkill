@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import api from '../../../../../services/api';
 import './styles.css';
@@ -34,7 +35,9 @@ export default function Signin () {
         <>
             <input type="password" name="" id="" onChange={ event => setPassword(event.target.value) }/>
             <p> { error } </p>
-            <button type="button" onClick={fetchLogin}>Logar</button>
+            <Link to="/agnd3">
+                <button type="button" onClick={fetchLogin}>Logar</button>
+            </Link>
         </>
     );
 };
