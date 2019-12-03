@@ -28,16 +28,17 @@ export default function Agnd1() {
         setServiceSelected(service);
         localStorage.setItem('service', service);
         localStorage.setItem('employee', 'any');
+
+        // const serviceLocal = localStorage.getItem('service');
+
+        console.log(serviceSelected);
+        const responseEmployees = await api.get(`/services/${service}/employees`);
         
-        const serviceLocal = localStorage.getItem('service');
-        const responseEmployees = await api.get('/services/employees', 
-            { 
-                headers: {'service': serviceLocal} 
-            });
-        
-        if (serviceLocal != ''){
-            setEmployees(responseEmployees.data.employees);
-        }
+        // if (serviceLocal != ''){
+            // setEmployees(responseEmployees.data);
+            // console.log(responseEmployees.data)
+        // }
+        console.log(responseEmployees.data)
     }
     
     function handleEmployeeSelected(employee) {
@@ -69,7 +70,7 @@ export default function Agnd1() {
                 <select onClick={event => handleEmployeeSelected(event.target.value)}>
                     <option value="any" key="any">Qualquer Funcionário</option>
                     {employees.map(employee => (
-                        <option key={employee.id} value={employee.id}>
+                        <option key={employee.id} value={employee.name}>
                             {employee.name}
                         </option>
                     ))}
