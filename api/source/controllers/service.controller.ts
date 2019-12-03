@@ -21,9 +21,9 @@ export class ServiceController {
   }
   static showEmployees(req: Request, res: Response){
 
-    const { service } = req.headers;
+    const { id } = req.params;
 
-    Position.findOne({
+    Position.findAll({
       attributes: [],
       include: [
         {
@@ -33,8 +33,8 @@ export class ServiceController {
         },
         {
           association: 'services',
-          attributes: ['service', 'value'],
-          where: { service },
+          attributes: [],
+          where: { id },
 
           //Requirido que ele faça tal serviço
         }

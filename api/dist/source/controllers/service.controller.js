@@ -12,14 +12,14 @@ class ServiceController {
     }
     static index(req, res) {
         Service_1.Service.findAll({
-            attributes: { exclude: ['createdAt', 'updatedAt', 'position_id'] },
+            attributes: { exclude: ['createdAt', 'updatedAt'] }
         }).then(services => {
             return res.json(services);
         });
     }
     static showEmployees(req, res) {
-        const { service } = req.headers;
-        Position_1.Position.findOne({
+        const { id } = req.params;
+        Position_1.Position.findAll({
             attributes: [],
             include: [
                 {
@@ -29,8 +29,8 @@ class ServiceController {
                 },
                 {
                     association: 'services',
-                    attributes: { exclude: ['createdAt', 'updatedAt', 'position_id'] },
-                    where: { service },
+                    attributes: [],
+                    where: { id },
                 }
             ]
         }).then(position => {
