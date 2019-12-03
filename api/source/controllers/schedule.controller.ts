@@ -36,6 +36,8 @@ export class ScheduleController {
 
     const { id } = req.params;
     Schedule.findByPk(id).then(schedule =>{
+      if(schedule === null)
+        return res.status(400).json({error : 'Schedule not found'});
       return res.json(schedule);
     }).catch(error => {
       console.log(error);
@@ -55,5 +57,17 @@ export class ScheduleController {
     })
 
   }
+  static destroy(req: Request, res: Response){
+    const { id } = req.params;
+
+    Schedule.destroy({
+      where: {id}
+    }).then(schedule => {
+      return res.json(schedule);
+    }).catch(error => {
+      console.log(error);
+    });
+  }
+
 
 }

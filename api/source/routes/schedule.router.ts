@@ -12,6 +12,8 @@ class ScheduleRouter implements Routers{
 
     //Alterar um schedule
     this.application.put('/schedules/:id', ScheduleController.update);
+    //Destruir um schedule
+    this.application.delete('/schedules/:id', ScheduleController.destroy);
     return this.application;
   }
 }

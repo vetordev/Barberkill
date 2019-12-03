@@ -32,6 +32,8 @@ class ScheduleController {
     static show(req, res) {
         const { id } = req.params;
         Schedule_1.Schedule.findByPk(id).then(schedule => {
+            if (schedule === null)
+                return res.status(400).json({ error: 'Schedule not found' });
             return res.json(schedule);
         }).catch(error => {
             console.log(error);
@@ -40,6 +42,16 @@ class ScheduleController {
     static update(req, res) {
         const { id } = req.params;
         Schedule_1.Schedule.update(req.body, {
+            where: { id }
+        }).then(schedule => {
+            return res.json(schedule);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+    static destroy(req, res) {
+        const { id } = req.params;
+        Schedule_1.Schedule.destroy({
             where: { id }
         }).then(schedule => {
             return res.json(schedule);

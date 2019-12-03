@@ -12,6 +12,8 @@ class ScheduleRouter {
         this.application.get('/schedules/:id', schedule_controller_1.ScheduleController.show);
         //Alterar um schedule
         this.application.put('/schedules/:id', schedule_controller_1.ScheduleController.update);
+        //Destruir um schedule
+        this.application.delete('/schedules/:id', schedule_controller_1.ScheduleController.destroy);
         return this.application;
     }
 }
