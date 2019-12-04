@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+div#clients {
+    width: 100%;
+    height: 100vh;
+    background: url('./img/banner-barber0.jpg');
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    padding-left: 14%;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#client-container {
+    width: 80%;
+    height: 90%;
+    background: rgb(38, 38, 39);
+}
+
+div#personal-data {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    /* background: red; */
+}
+
+.input-client {
+    width: 400px;
+    height: 30px;
+    margin-top: 5px;
+    background: transparent;
+    color: #FFF;
+    border: none;
+}
+.input-client:focus {
+    background: #FFF;
+    color: #000;
+}
+
+#btn-update-cli {
+    /* display: none; */
+}

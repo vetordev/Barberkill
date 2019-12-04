@@ -7,7 +7,7 @@ import './styles.css';
 export default function Signin () {
 
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [incorrectPass, setIncorrectPass] = useState('');
 
     async function fetchLogin() {
 
@@ -16,16 +16,17 @@ export default function Signin () {
         
         for (let client of response.data) {
             if (client.password == password) {
+                localStorage.setItem('client_id', client.id)
                 alert('Logado com sucesso!');
                 aux = true;
-                setError('');
+                setIncorrectPass('');
                 setPassword('');
                 break;
             }
         }
         
         if (aux == false) {
-            setError('Senha incorreta');
+            setIncorrectPass('Senha incorreta');
             setPassword('');
         }
 
@@ -34,7 +35,7 @@ export default function Signin () {
     return (
         <>
             <input type="password" name="" id="" onChange={ event => setPassword(event.target.value) }/>
-            <p> { error } </p>
+            <p> { incorrectPass } </p>
             <Link to="/agnd3">
                 <button type="button" onClick={fetchLogin}>Logar</button>
             </Link>
