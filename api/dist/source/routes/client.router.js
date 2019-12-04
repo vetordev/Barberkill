@@ -15,6 +15,8 @@ class ClientRouter {
         this.application.get('/clients/email', client_controller_1.ClientController.existsEmail);
         //Mostrar o client que tem certo id
         this.application.get('/clients/:id', client_controller_1.ClientController.show);
+        //Alterar um client
+        this.application.put('/clients/:id', client_controller_1.ClientController.update);
         return this.application;
     }
 }

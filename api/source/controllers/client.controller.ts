@@ -57,6 +57,19 @@ export class ClientController {
     });
   }
 
+  static update(req: Request, res: Response){
+
+    const { id } = req.params;
+
+    Client.update(req.body, {
+      where: { id }
+    }).then(schedule => {
+      return res.json(schedule);
+    }).catch(error => {
+      console.log(error);
+;
+    });
+  }
 }
 
 

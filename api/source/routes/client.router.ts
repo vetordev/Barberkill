@@ -18,6 +18,9 @@ class ClientRouter implements Routers {
 
     //Mostrar o client que tem certo id
     this.application.get('/clients/:id', ClientController.show);
+
+    //Alterar um client
+    this.application.put('/clients/:id', ClientController.update);
     
     return this.application;
   }

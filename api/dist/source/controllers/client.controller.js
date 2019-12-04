@@ -44,5 +44,16 @@ class ClientController {
             console.log(error);
         });
     }
+    static update(req, res) {
+        const { id } = req.params;
+        Client_1.Client.update(req.body, {
+            where: { id }
+        }).then(schedule => {
+            return res.json(schedule);
+        }).catch(error => {
+            console.log(error);
+            ;
+        });
+    }
 }
 exports.ClientController = ClientController;
