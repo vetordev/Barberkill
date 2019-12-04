@@ -8,6 +8,8 @@ class ScheduleRouter implements Routers{
 
     this.application.post('/schedules', ScheduleController.store);
     this.application.get('/schedules', ScheduleController.index)
+
+    //Mostrar um schedule pelo id
     this.application.get('/schedules/:id', ScheduleController.show);
 
     //Alterar um schedule

@@ -22,6 +22,9 @@ class ClientRouter implements Routers {
     //Alterar um client
     this.application.put('/clients/:id', ClientController.update);
     
+    //Mostrar os agendamentos
+    this.application.get('/clients/:id/schedules', ClientController.showSchedules);
+
     return this.application;
   }
 }

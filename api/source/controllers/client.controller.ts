@@ -67,8 +67,26 @@ export class ClientController {
       return res.json(schedule);
     }).catch(error => {
       console.log(error);
-;
     });
+  }
+  static showSchedules(req: Request, res: Response){
+
+    const { id } = req.params;
+    Client.findByPk(id,{
+      attributes: { exclude: ['createdAt', 'updatedAt'] },
+      include: [
+        {
+          association: 'schedules',
+          attributes: { exclude: ['createdAt', 'updatedAt'] }
+        }
+      ]      
+    }).then(client => {
+      if(client === null)
+        return res.status(400).json({error: "User not found"});
+      return res.json(client);
+    }).catch(error => {
+      console.log(error);
+    })
   }
 }
 
