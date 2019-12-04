@@ -21,8 +21,8 @@ class ClientController {
             console.log(error);
         });
     }
-    static existsEmail(req, res) {
-        const { email } = req.body;
+    static findByEmail(req, res) {
+        const { email } = req.query;
         Client_1.Client.findOne({
             where: { email }
         }).then(client => {
