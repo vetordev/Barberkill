@@ -21,6 +21,14 @@ export default function Client() {
     const [horary, setHorary] = useState('');
     const [obs, setObs] = useState('');
 
+
+    const destroyClient = () => {
+
+        const client_id = localStorage.getItem('client_id');
+
+        api.delete(`/clients/${client_id}`).then(() => alert('User removed'));
+    }
+
     useEffect(() => {
         async function loadInfoSche() {
             const clientLogin = localStorage.getItem('client_id');
@@ -123,9 +131,11 @@ export default function Client() {
                         )) }
 
                         <button onClick={ saveUpdatesShe }>Salvar</button>
+                        <button onClick={destroyClient}>Deletar um cliente</button>
                     </div>
                 </div>
             </div>
+            
         // </div>
     );
 
