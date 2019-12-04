@@ -24,7 +24,7 @@ export default function Agnd3() {
             service_id: service_id,
             observation: obs
         }
-
+        console.log(data);
         await api.post('/schedules', data);
     }
 

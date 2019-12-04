@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import api from '../../../../../services/api';
 // import './styles.css';
@@ -10,6 +11,7 @@ export default function Signup() {
     const [cel, setCel] = useState('');
     const [password1, setPassword1] = useState('');
     const [password2, setPassword2] = useState('');
+    // const email = 
 
     async function registerClient() {
         const data = {
@@ -22,6 +24,18 @@ export default function Signup() {
         }
 
         await api.post('/clients', data);
+        alert('Cadastrado com sucesso!')
+
+        storageCliId(data.email);
+
+    }
+
+    async function storageCliId(email) {
+        alert('oi')
+        // const response = await api.get('/clients/email', email);
+
+        // alert(response.data[0])
+        // localStorage.setItem('client_id', response.data.id);
     }
 
     return (
@@ -31,7 +45,9 @@ export default function Signup() {
             <input type="tel" name="cel" id="cel" placeholder="Telefone" onChange={ event => setCel(event.target.value) } />
             <input type="password" name="password1" id="password1" placeholder="Senha" onChange={ event => setPassword1(event.target.value) } />
             <input type="password" name="password2" id="password2" placeholder="Confirmar senha" onChange={ event => setPassword2(event.target.value) } />
-            <button onClick={ registerClient }>Cadastrar</button>
+            <Link to="/agnd3">
+                <button onClick={ registerClient }>Cadastrar</button>
+            </Link>
         </>
     );
 };

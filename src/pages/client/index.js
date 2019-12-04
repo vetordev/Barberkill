@@ -56,23 +56,59 @@ export default function Client() {
     }
 
     async function saveUpdatesShe() {
-        // const 
+
+        // const data = {
+        //     date: ,
+        //     horary: ,
+        //     observation: ,
+        //     client: ,
+        //     employee: ,
+        //     service: ,
+            
+        // }
+
+        // const clientLogin = localStorage.getItem('client_id');
+
+
+        // await api.put(`/clients/${clientLogin}/schedules`)
     }
 
     return (
-        <div id="container">
-            <Sidebar />
+        // <div id="container">
+        //     <Sidebar />
             
             <div id="clients">
                 <div id="client-container">
                     <div id="personal-data">
-                        <input type="text" id="name" className="input-client" value={ name } onChange={ event => setName(event.target.value) }/>
-                        <input type="text" id="email" className="input-client" value={ email } onChange={ event => setEmail(event.target.value) }/>
-                        <input type="text" id="cpf" className="input-client" value={ cpf } onChange={ event => setCpf(event.target.value) }/>
-                        <input type="text" id="tel" className="input-client" value={ tel } onChange={ event => setTel(event.target.value) }/>
-                        <input type="text" id="cel" className="input-client" value={ cel } onChange={ event => setCel(event.target.value) }/>
-                        
-                        <button id="btn-update-cli" onClick={ saveUpdatesCli }>Salvar</button>
+                    <p id="title">Seus dados</p>
+
+                        <div id="container-personal">
+                            <div className="field">
+                                <label htmlFor="name">Seu nome</label>
+                                <input type="text" id="name" name="name" className="input-client" value={ name } onChange={ event => setName(event.target.value) }/>
+                            </div>
+
+                            <div className="field">
+                                <label htmlFor="email">E-mail</label>
+                                <input type="text" id="email" name="email" className="input-client" value={ email } onChange={ event => setEmail(event.target.value) }/>
+                            </div>
+
+                            <div className="field">
+                                <label htmlFor="cpf">CPF</label>
+                                <input type="text" id="cpf" name="cpf" className="input-client" value={ cpf } onChange={ event => setCpf(event.target.value) }/>
+                            </div>
+
+                            <div className="field">
+                                <label htmlFor="tel">Telefone:</label>
+                                <input type="text" id="tel" name="tel" className="input-client" value={ tel } onChange={ event => setTel(event.target.value) }/>
+                            </div>
+
+                            <div className="field">
+                                <label htmlFor="cel">Celular:</label>
+                                <input type="text" id="cel" name="cel" className="input-client" value={ cel } onChange={ event => setCel(event.target.value) }/>
+                            </div>
+                        <div className="btn-center"><button id="btn-update-cli" onClick={ saveUpdatesCli }>Salvar</button></div>
+                        </div>
                     </div>
 
                     <div id="schedules-data">
@@ -90,7 +126,7 @@ export default function Client() {
                     </div>
                 </div>
             </div>
-        </div>
+        // </div>
     );
 
 

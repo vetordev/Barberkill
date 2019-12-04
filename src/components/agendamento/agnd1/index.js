@@ -83,7 +83,9 @@ export default function Agnd1() {
             alert('Preencha todos os campos corretamente.');
         }
         // else if ()
+        
         else {
+            // console.log(loginState);
             if (loginState == null){
                 // alert(loginState);
                 setLink('/Agnd2');

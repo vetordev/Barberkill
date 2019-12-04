@@ -8,7 +8,7 @@ export default function Signin () {
 
     const [password, setPassword] = useState('');
     const [incorrectPass, setIncorrectPass] = useState('');
-
+    const email = localStorage.getItem('email');
     async function fetchLogin() {
 
         var aux = false;
@@ -21,6 +21,7 @@ export default function Signin () {
                 aux = true;
                 setIncorrectPass('');
                 setPassword('');
+                // storageCliId();
                 break;
             }
         }
@@ -30,6 +31,11 @@ export default function Signin () {
             setPassword('');
         }
 
+    }
+    async function storageCliId() {
+        // const response = await api.get('/clients', email);
+
+        // console.log(response.data);
     }
 
     return (
