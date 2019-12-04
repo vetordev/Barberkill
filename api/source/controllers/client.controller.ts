@@ -41,6 +41,22 @@ export class ClientController {
       console.log(error);
     });
   }
+
+  static show(req: Request, res: Response){
+
+    const { id } = req.params;
+
+    Client.findByPk(id,{
+      attributes: { exclude: ['createdAt', 'updatedAt'] }
+    }).then(client => {
+      if(client === null)
+        return res.status(400).json({error: "client not found"});
+      return res.json(client);
+    }).catch(error => {
+      console.log(error);
+    });
+  }
+
 }
 
 

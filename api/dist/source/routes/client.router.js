@@ -13,6 +13,8 @@ class ClientRouter {
         this.application.post('/clients', client_controller_1.ClientController.store);
         //Rota para verificar se um email existe
         this.application.get('/clients/email', client_controller_1.ClientController.existsEmail);
+        //Mostrar o client que tem certo id
+        this.application.get('/clients/:id', client_controller_1.ClientController.show);
         return this.application;
     }
 }

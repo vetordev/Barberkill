@@ -15,6 +15,9 @@ class ClientRouter implements Routers {
 
     //Rota para verificar se um email existe
     this.application.get('/clients/email', ClientController.existsEmail);
+
+    //Mostrar o client que tem certo id
+    this.application.get('/clients/:id', ClientController.show);
     
     return this.application;
   }
