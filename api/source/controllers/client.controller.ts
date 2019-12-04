@@ -1,5 +1,6 @@
 import { Client } from '../models/Client';
 import { Request, Response } from 'express';
+import { Schedule } from '../models/Schedule';
 
 export class ClientController {
 
@@ -72,21 +73,25 @@ export class ClientController {
   static showSchedules(req: Request, res: Response){
 
     const { id } = req.params;
-    Client.findByPk(id,{
-      attributes: { exclude: ['createdAt', 'updatedAt'] },
+    Schedule.findAll({
+      attributes: {exclude: ['createdAt', 'updatedAt', 'client_id', 'service_id', 'employee_id']},
       include: [
         {
-          association: 'schedules',
-          attributes: { exclude: ['createdAt', 'updatedAt'] }
+          association: 'employees', attributes: {exclude: ['createdAt', 'updatedAt']},
+        },
+        {
+          association: "services", attributes: {exclude: ['createdAt', 'updatedAt', 'position_id']},
+        },
+        {
+          association: "clients", attributes: {exclude: ['createdAt', 'updatedAt']},
+          where: { id }
         }
-      ]      
-    }).then(client => {
-      if(client === null)
-        return res.status(400).json({error: "User not found"});
-      return res.json(client);
+      ]
+    }).then(schedules => {
+      return res.json(schedules);
     }).catch(error => {
-      console.log(error);
-    })
+      console.log(error)
+    });
   }
 }
 

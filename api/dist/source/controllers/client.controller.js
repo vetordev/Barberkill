@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Client_1 = require("../models/Client");
+const Schedule_1 = require("../models/Schedule");
 class ClientController {
     static store(req, res) {
         // Recebendo parâmetros do corpo da requisição
@@ -56,18 +57,22 @@ class ClientController {
     }
     static showSchedules(req, res) {
         const { id } = req.params;
-        Client_1.Client.findByPk(id, {
-            attributes: { exclude: ['createdAt', 'updatedAt'] },
+        Schedule_1.Schedule.findAll({
+            attributes: { exclude: ['createdAt', 'updatedAt', 'client_id', 'service_id', 'employee_id'] },
             include: [
                 {
-                    association: 'schedules',
-                    attributes: { exclude: ['createdAt', 'updatedAt'] }
+                    association: 'employees', attributes: { exclude: ['createdAt', 'updatedAt'] },
+                },
+                {
+                    association: "services", attributes: { exclude: ['createdAt', 'updatedAt', 'position_id'] },
+                },
+                {
+                    association: "clients", attributes: { exclude: ['createdAt', 'updatedAt'] },
+                    where: { id }
                 }
             ]
-        }).then(client => {
-            if (client === null)
-                return res.status(400).json({ error: "User not found" });
-            return res.json(client);
+        }).then(schedules => {
+            return res.json(schedules);
         }).catch(error => {
             console.log(error);
         });

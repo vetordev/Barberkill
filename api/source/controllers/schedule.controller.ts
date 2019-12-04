@@ -12,6 +12,7 @@ export class ScheduleController {
   }
 
   static index(req: Request, res: Response){
+    
     Schedule.findAll({
       attributes: {exclude: ['createdAt', 'updatedAt']},
       include: [
