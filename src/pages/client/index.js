@@ -41,7 +41,7 @@ export default function Client() {
         loadInfoSche();
     }, []);
 
-    async function saveUpdates() {
+    async function saveUpdatesCli() {
         const clientLogin = localStorage.getItem('client_id');
 
         const data = {
@@ -53,6 +53,10 @@ export default function Client() {
         }
 
         await api.put(`/clients/${clientLogin}`, data);
+    }
+
+    async function saveUpdatesShe() {
+        // const 
     }
 
     return (
@@ -68,7 +72,7 @@ export default function Client() {
                         <input type="text" id="tel" className="input-client" value={ tel } onChange={ event => setTel(event.target.value) }/>
                         <input type="text" id="cel" className="input-client" value={ cel } onChange={ event => setCel(event.target.value) }/>
                         
-                        <button id="btn-update-cli" onClick={ saveUpdates }>Salvar</button>
+                        <button id="btn-update-cli" onClick={ saveUpdatesCli }>Salvar</button>
                     </div>
 
                     <div id="schedules-data">
@@ -81,6 +85,8 @@ export default function Client() {
                             <input type="text" id="obs" className="input-client" value={ schedule.observation } onChange={ event => setObs(event.target.value) }/>
                             </>
                         )) }
+
+                        <button onClick={ saveUpdatesShe }>Salvar</button>
                     </div>
                 </div>
             </div>
