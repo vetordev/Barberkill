@@ -32,6 +32,7 @@ export default function Agnd3() {
     //     const responseSch = await api.get('/schedules');
         
     // }
+    
 
     return (
         <div className="container-aux" id="aux-agend">
