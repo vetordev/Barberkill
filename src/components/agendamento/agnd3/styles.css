@@ -1,0 +1,20 @@
+#sche-review {
+    width: 400px;
+    height: 80px;
+    background-color: #390A0A;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+
+}
+#sche-review span {
+    font-weight: bolder;
+}
+
+#text-agnd3 {
+    height: 100px !important;
+    margin: 20px 0 50px 0;
+}

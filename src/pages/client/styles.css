@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+div#clients {
+    width: 20%;
+    height: 100vh;
+    position: absolute;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 80%
+    /* z-index: 1 !important; */
+    
+}
+
+div#client-container {
+    width: 100%;
+    height: 100vh;
+    background: rgb(38, 38, 39);
+    display: flex;
+    flex-direction: column;
+}
+
+div#personal-data {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background: rgb(219, 219, 219);
+    color: #000;
+    font-family: 'Roboto', sans-serif;   
+    font-size: 20px;
+}
+
+div#clients input[type="text"] {
+    font-family: 'Roboto', sans-serif;   
+    font-size: 20px;
+    width: 90%;
+    height: 35px;
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    padding-left: 7px;
+    color: rgb(155, 155, 155);
+    font-size: 15px;
+
+}
+div#clients label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #444;
+}
+
+div#clients input[type="text"]:focus {
+    background: #FFF;
+    color: #000;
+}
+.field {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    /* background: red; */
+}
+
+.btn-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top:; */
+}
+
+div#personal-data .btn-center {
+    margin-top: 30px
+}
+
+#title {
+    display: flex;
+    height: 50px;
+    background: rgb(19, 7, 7);
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    padding: 20px;
+    /* position: fixed; */
+}
+
+#schedules-data {
+    /* width: 50%; */
+    overflow-y: scroll;
+    background: rgb(219, 219, 219);
+}
+
+div#container-personal, div#container-schedule {
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.btn-save {
+    width: 150px;
+    height: 50px;
+}
+#btn-logout {
+    width: 40px;
+    height: 40px;
+}
+#btn-del {
+    width: 150px;
+    height: 40px;
+    margin-right: 5px;
+}
+#btn-random {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

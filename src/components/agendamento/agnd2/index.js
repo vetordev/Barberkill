@@ -7,6 +7,9 @@ import Init from './components/init';
 import './styles.css';
 import api from '../../../services/api';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 export default function Agnd2() {
 
     const [stage, setstage] = useState(<Init/>); // indica a 'rota' (Login ou Cadastro) de acordo com a existência do usuário no db
@@ -37,8 +40,12 @@ export default function Agnd2() {
     return (
         <div className="container-aux start" id="aux-agend">
             <h1 id="h1agnd2"><b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail</h1>
-            <input type="email" name="email" id="email" placeholder="Seu e-mail" onChange={ event => setEmail(event.target.value) }/>
-            <button type="button" onClick={ findEmail }>Buscar</button>
+            <div id="lateral">
+                <input type="email" name="email" id="email" placeholder="Seu e-mail" onChange={ event => setEmail(event.target.value) }/>
+                <button type="button" id="find-button" onClick={ findEmail }>
+                    <FontAwesomeIcon icon={faSearch} className="ico"/>
+                </button>
+            </div>
 
             { stage }
 

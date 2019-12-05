@@ -11,19 +11,17 @@ import Agendamento from '../../components/agendamento';
 
 import api from '../../services/api';
 
-export default class Main extends Component {
-    render() {
-        return (
-            <div id="container">
-                <Sidebar />
-                <Banner />
-                <Espaco />
-                <Filter />
-                <Portfolio />
-                <Precos />
-                <Agendamento />
-                <Contato />
-            </div>
-        )
-    }
+export default function Main() {
+    return (
+        <div id="container">
+            <Sidebar />
+            <Banner />
+            <Espaco />
+            <Filter />
+            <Portfolio />
+            <Precos />
+            <Agendamento />
+            <Contato />
+        </div>
+    )
 }

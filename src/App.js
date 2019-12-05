@@ -2,12 +2,12 @@ import React from 'react';
 
 import './styles.css';
 
-import Main from './pages/main';
+import Routes from './routes';
 
 function App() {
   return (
     <div className="App">
-        <Main />   
+        <Routes />
     </div>
     
   );

@@ -33,12 +33,9 @@ div#aux-agend {
     flex-direction: column;
 }
 div.timer-container {
-    /* background: yellow; */
     width: 300px;
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
-    /* flex-direction: column; */
 }
 button.btn-smaller {
     margin-top: 30px;
