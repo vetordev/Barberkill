@@ -26,8 +26,12 @@ export default function Client() {
 
         const client_id = localStorage.getItem('client_id');
 
-        api.delete(`/clients/${client_id}`).then(() => alert('User removed'));
+        api.delete(`/clients/${client_id}`).then(() => {
+             alert('User removed')
+             localStorage.removeItem('client_id');
+        });
     }
+    const logout = () => localStorage.removeItem('client_id');    
 
     useEffect(() => {
         async function loadInfoSche() {
@@ -132,6 +136,7 @@ export default function Client() {
 
                         <button onClick={ saveUpdatesShe }>Salvar</button>
                         <button onClick={destroyClient}>Deletar um cliente</button>
+                        <button onClick={logout}>Logout</button>
                     </div>
                 </div>
             </div>
