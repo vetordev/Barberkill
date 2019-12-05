@@ -21,10 +21,12 @@ export default function Banner() {
     // }, [])
     function stateClient() {
         
-        
-        if (cli == '')
+        const login_cli = localStorage.getItem('client_id');
+
+        if (cli == '' && login_cli != '')
             setCli(<Client />)
         else setCli('');
+
     }
 
     return (

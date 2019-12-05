@@ -14,7 +14,7 @@ class MyCalendar extends React.Component {
   }
 
   onChange = (value, inputValue) => {
-    localStorage.setItem('date', value.format('DD-MM-YYYY'))
+    localStorage.setItem('date', value.format('DD/MM/YYYY'))
     this.setState({value})
   }
 
@@ -35,7 +35,7 @@ class MyCalendar extends React.Component {
         allowClear={true}
         disabled={false}
         placeholder={'please input date'}
-        format={'YYYY-MM-DD'}
+        format={'DD/MM/YYYY'}
         onOpenChange={onOpenChange}
         disabledDate={disabledDate}
       />

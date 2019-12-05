@@ -168,7 +168,7 @@ export default function Client() {
                         </div>
                     </div>
 
-                    <div id="schedules-data">
+                    {/* <div id="schedules-data">
                         <p id="title">Seus agendamentos</p>
                         <div id="container-schedule">
                         { schedules.map(schedule => (
@@ -198,7 +198,7 @@ export default function Client() {
                                 <input type="text" id="obs" className="input-client" value={ schedule.observation } onChange={ event => setObs(event.target.value) }/>
                             </div>
                             </>
-                        )) }
+                        )) } */}
                         
                         <button onClick={ saveUpdatesShe } className="btn-save">Salvar</button>
 
@@ -210,8 +210,6 @@ export default function Client() {
 
                         {/* <FontAwesomeIcon icon={ faEdit } id="user-ico" onClick={stateClient}/> */}
                     </div>
-                </div>
-            </div>
     );
 
 

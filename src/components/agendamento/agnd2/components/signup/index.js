@@ -23,19 +23,19 @@ export default function Signup() {
             password: password2,
         }
 
-        await api.post('/clients', data);
+        const response = await api.post('/clients', data);
+        localStorage.setItem('client_id', response.data.id);
         alert('Cadastrado com sucesso!')
 
-        storageCliId(data.email);
+        // storageCliId(data.email);
 
     }
 
     async function storageCliId(email) {
-        alert('oi')
-        // const response = await api.get('/clients/email', email);
+        const response = await api.get('/clients/email', email);
 
-        // alert(response.data[0])
-        // localStorage.setItem('client_id', response.data.id);
+        alert(response.data[0]);
+        localStorage.setItem('client_id', response.data.id);
     }
 
     return (

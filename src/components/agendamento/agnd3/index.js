@@ -21,7 +21,7 @@ export default function Agnd3() {
         const data = {
             client_id: client_id,
             horary: '1830',
-            date: '212121',
+            date: date,
             employee_id: employee_id,
             service_id: service_id,
             observation: obs

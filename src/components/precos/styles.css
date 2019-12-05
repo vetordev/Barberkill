@@ -7,9 +7,10 @@ div#precos {
     background-size: cover;
     /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
     color: #000 !important;
-    /* display: flex;
+    display: flex;
     align-items: center;
-    justify-content: center; */
+    justify-content: center;
+    padding-left: 13%;
 }
 div.flex {
     display: flex;
@@ -26,7 +27,7 @@ div#price-table {
     padding-left: 60px;
     background: url('./img/agenda.png');
     background-size: cover;
-    width: 70%;
+    width: 170%;
     height: 90%;
     z-index: 5;
     font-family: 'Raleway', sans-serif;

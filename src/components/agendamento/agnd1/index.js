@@ -78,17 +78,13 @@ export default function Agnd1() {
 
         const loginState = localStorage.getItem('client_id');
 
-        // console.log(loginState);
         if (serviceSelected == '' || employeeSelected == ''){
             setLink('');
             alert('Preencha todos os campos corretamente.');
         }
-        // else if ()
         
         else {
-            // console.log(loginState);
             if (loginState == null){
-                // alert(loginState);
                 setLink('/Agnd2');
             }
             else setLink('/Agnd3');

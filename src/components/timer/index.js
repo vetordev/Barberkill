@@ -6,12 +6,18 @@ import moment from 'moment';
 import TimePicker from 'rc-time-picker';
 
 export default function Timer() {
+    const format = 'hh:mm';
     function oi(value) {
-        alert(value)
+        // console.log()
+        // console.log(time.value)
+        localStorage.setItem('horary', value.format(format))
     }
+    const time = <TimePicker defaultValue={moment()} showSecond={false} minuteStep={15} onChange={oi}  />;
+
     return (
         <div id="timer">
-            <TimePicker defaultValue={moment()} showSecond={false} minuteStep={15}/>
+            {time}
+            {/* <button onClick={oi}></button> */}
         </div>
     )
 };
