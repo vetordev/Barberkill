@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,11 +11,18 @@ import Client from '../../pages/client';
 export default function Banner() {
     
     const [cli, setCli] = useState('');
+    const [ico, setIco] = useState('');
 
+    // useEffect(() => {
+    //     const login_cli = localStorage.getItem('client_id');
+
+    //     if ( login_cli != null)
+
+    // }, [])
     function stateClient() {
-        const login_cli = localStorage.getItem('client_id');
         
-        if (cli == '' && login_cli != null)
+        
+        if (cli == '')
             setCli(<Client />)
         else setCli('');
     }
@@ -23,7 +30,6 @@ export default function Banner() {
     return (
         <div id="banner">
                 <FontAwesomeIcon icon={faUserCircle} id="user-ico" onClick={stateClient}/>
-
             {cli}
         </div>
     )

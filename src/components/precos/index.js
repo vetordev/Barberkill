@@ -4,6 +4,7 @@ import './styles.css';
 
 const Precos = () => (
     <div id="precos">
+        {/* div */}
         <div className="flex">
             <div id="price-table">
                 <h1>Tabela de preços</h1>

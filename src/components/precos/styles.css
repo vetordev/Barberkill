@@ -6,6 +6,10 @@ div#precos {
     background: url('./img/background.png');
     background-size: cover;
     /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    color: #000 !important;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
 }
 div.flex {
     display: flex;
@@ -26,6 +30,7 @@ div#price-table {
     height: 90%;
     z-index: 5;
     font-family: 'Raleway', sans-serif;
+    color: #000 !important;
 }
 div#price-table h1 {
     font-size: 40px;
@@ -38,6 +43,7 @@ div#price-table p {
     padding-bottom: 45px;
     line-height: 35px;
     width: 45%;
+    color: #000 !important;
     /* background: orangered; */
 }
 

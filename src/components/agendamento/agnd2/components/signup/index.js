@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import api from '../../../../../services/api';
-// import './styles.css';
+import './styles.css';
 
 export default function Signup() {
     
@@ -39,7 +39,7 @@ export default function Signup() {
     }
 
     return (
-        <>
+        <div id="signup">
             <input type="text" name="name" id="name" placeholder="Seu nome" onChange={ event => setName(event.target.value) } />
             <input type="text" name="cpf" id="cpf" placeholder="CPF" onChange={ event => setCpf(event.target.value) } />
             <input type="tel" name="cel" id="cel" placeholder="Telefone" onChange={ event => setCel(event.target.value) } />
@@ -48,6 +48,6 @@ export default function Signup() {
             <Link to="/agnd3">
                 <button onClick={ registerClient }>Cadastrar</button>
             </Link>
-        </>
+        </div>
     );
 };

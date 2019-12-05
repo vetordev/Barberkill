@@ -39,12 +39,12 @@ export default function Signin () {
     }
 
     return (
-        <>
-            <input type="password" name="" id="" onChange={ event => setPassword(event.target.value) }/>
+        <signin>
+            <input type="password" name="pass" id="pass" onChange={ event => setPassword(event.target.value) } placeholder="Sua senha"/>
             <p> { incorrectPass } </p>
             <Link to="/agnd3">
                 <button type="button" onClick={fetchLogin}>Logar</button>
             </Link>
-        </>
+        </signin>
     );
 };

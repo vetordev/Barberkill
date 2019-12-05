@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import api from '../../../services/api';
 
+import './styles.css';
+
 export default function Agnd3() {
     const date = localStorage.getItem('date');
     const service = localStorage.getItem('service');
@@ -36,12 +38,16 @@ export default function Agnd3() {
 
     return (
         <div className="container-aux" id="aux-agend">
-                <p>Date: <span>{ date }</span></p>
+
+                <div id="sche-review">
+                    <p>Seu <span>{ service }</span> foi agendado para <span>{ date }</span> com <span>{ employee }</span>.</p>    
+                </div>
+                {/* <p>Date: <span>{ date }</span></p>
                 <p>Service: <span>{ service }</span></p>
-                <p>Employee: <span>{ employee }</span></p>
+                <p>Employee: <span>{ employee }</span></p> */}
                 
                 {/* <label htmlFor="obs"></label> */}
-                <textarea 
+                <textarea id="text-agnd3"
                     name="obs" 
                     placeholder="Gostaria de adicionar alguma observação? Caso não, deixe em branco."
                     onChange={ event => setObs(event.target.value)}

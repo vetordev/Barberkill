@@ -30,18 +30,14 @@ div#client-container {
 div#personal-data {
     display: flex;
     flex-direction: column;
-    height: 67%;
+    height: auto;
     background: rgb(219, 219, 219);
-    /* margin: 10px; */
-    /* border-radius: 7px; */
     color: #000;
-    /* padding-left: 20px; */
     font-family: 'Roboto', sans-serif;   
     font-size: 20px;
-    /* justify-content: center; */
 }
 
-div#personal-data input[type="text"] {
+div#clients input[type="text"] {
     font-family: 'Roboto', sans-serif;   
     font-size: 20px;
     width: 90%;
@@ -54,13 +50,13 @@ div#personal-data input[type="text"] {
     font-size: 15px;
 
 }
-div#personal-data label {
+div#clients label {
     font-weight: bold;
     font-size: 16px;
     color: #444;
 }
 
-div#personal-data input[type="text"]:focus {
+div#clients input[type="text"]:focus {
     background: #FFF;
     color: #000;
 }
@@ -75,7 +71,7 @@ div#personal-data input[type="text"]:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: red;
+    /* margin-top:; */
 }
 
 div#personal-data .btn-center {
@@ -88,17 +84,38 @@ div#personal-data .btn-center {
     background: rgb(19, 7, 7);
     align-items: center;
     font-family: 'Lato', sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     padding: 20px;
+    /* position: fixed; */
 }
 
 #schedules-data {
     /* width: 50%; */
     overflow-y: scroll;
+    background: rgb(219, 219, 219);
 }
 
-div#container-personal {
+div#container-personal, div#container-schedule {
     padding: 20px 20px;
     display: flex;
     flex-direction: column;
+}
+.btn-save {
+    width: 150px;
+    height: 50px;
+}
+#btn-logout {
+    width: 40px;
+    height: 40px;
+}
+#btn-del {
+    width: 150px;
+    height: 40px;
+    margin-right: 5px;
+}
+#btn-random {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
