@@ -20,10 +20,10 @@ export default function Agnd2() {
 
         for (let client of response.data){
             if (client.email == email) {
-                handleStage(<Signin/>, true);
+                handleStage(<Signin />, true);
                 break;
             }
-            else handleStage(<Signup/>, false);
+            else handleStage(<Signup/>, false); //up
         }
     }
 

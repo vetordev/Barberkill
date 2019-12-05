@@ -18,7 +18,7 @@ export default function Init () {
         <div id="init">
             <p class="text-init"> Se você já possui uma conta, pode fazer login com ela! Se ainda não possui, não se preocupe, nós cadastraremos você.</p>
             <Link to={"/agnd2/signin"}>
-                {/* <button type="button">Buscar</button> */ }
+                {/* <button type="button">Buscar</button> */}
             </Link>
         </div>
     )
