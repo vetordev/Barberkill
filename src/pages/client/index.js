@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import Sidebar from '../../components/sidebar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
+import Sidebar from '../../components/sidebar';
 import api from '../../services/api';
 
 import './styles.css';
@@ -28,10 +30,10 @@ export default function Client() {
 
         api.delete(`/clients/${client_id}`).then(() => {
              alert('User removed')
-             localStorage.removeItem('client_id');
+             localStorage.clear();
         });
     }
-    const logout = () => localStorage.removeItem('client_id');    
+    const logout = () => localStorage.clear();    
 
     useEffect(() => {
         async function loadInfoSche() {
@@ -86,9 +88,6 @@ export default function Client() {
     }
 
     return (
-        // <div id="container">
-        //     <Sidebar />
-            
             <div id="clients">
                 <div id="client-container">
                     <div id="personal-data">
@@ -134,14 +133,13 @@ export default function Client() {
                             </>
                         )) }
 
+                        {/* <FontAwesomeIcon icon={ faEdit } id="user-ico" onClick={stateClient}/> */}
                         <button onClick={ saveUpdatesShe }>Salvar</button>
-                        <button onClick={destroyClient}>Deletar um cliente</button>
-                        <button onClick={logout}>Logout</button>
+                        <button onClick={ destroyClient }>Deletar um cliente</button>
+                        <button onClick={ logout }>Logout</button>
                     </div>
                 </div>
             </div>
-            
-        // </div>
     );
 
 
