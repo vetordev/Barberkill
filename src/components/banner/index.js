@@ -13,7 +13,9 @@ export default function Banner() {
     const [cli, setCli] = useState('');
 
     function stateClient() {
-        if (cli == '')
+        const login_cli = localStorage.getItem('client_id');
+        
+        if (cli == '' && login_cli != null)
             setCli(<Client />)
         else setCli('');
     }

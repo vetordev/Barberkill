@@ -68,12 +68,14 @@ div#personal-data input[type="text"]:focus {
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+    /* background: red; */
 }
 
 .btn-center {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: red;
 }
 
 div#personal-data .btn-center {
