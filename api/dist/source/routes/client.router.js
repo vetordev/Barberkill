@@ -19,6 +19,8 @@ class ClientRouter {
         this.application.put('/clients/:id', client_controller_1.ClientController.update);
         //Mostrar os agendamentos
         this.application.get('/clients/:id/schedules', client_controller_1.ClientController.showSchedules);
+        //Deletar um client
+        this.application.delete('/clients/:id', client_controller_1.ClientController.destroy);
         return this.application;
     }
 }

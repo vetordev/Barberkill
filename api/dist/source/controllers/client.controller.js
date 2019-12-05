@@ -2,10 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Client_1 = require("../models/Client");
 const Schedule_1 = require("../models/Schedule");
+const shajs = require("sha.js");
 class ClientController {
     static store(req, res) {
         // Recebendo parâmetros do corpo da requisição
         // const { name, email } = req.body;
+        req.body.password = shajs('sha512').update(req.body.password).digest('hex');
         Client_1.Client.create(req.body).then(client => {
             return res.json(client);
         }).catch(error => {
@@ -73,6 +75,16 @@ class ClientController {
             ]
         }).then(schedules => {
             return res.json(schedules);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+    static destroy(req, res) {
+        const { id } = req.params;
+        Client_1.Client.destroy({
+            where: { id }
+        }).then(client => {
+            return res.json(client);
         }).catch(error => {
             console.log(error);
         });

@@ -25,6 +25,9 @@ class ClientRouter implements Routers {
     //Mostrar os agendamentos
     this.application.get('/clients/:id/schedules', ClientController.showSchedules);
 
+    //Deletar um client
+    this.application.delete('/clients/:id', ClientController.destroy);
+
     return this.application;
   }
 }

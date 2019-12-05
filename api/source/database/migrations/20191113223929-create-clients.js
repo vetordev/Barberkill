@@ -20,7 +20,7 @@ module.exports = {
         unique: true
       },
       password: {
-        type: Sequelize.STRING(12),
+        type: Sequelize.STRING(128),
         allowNull: false
       },
       cpf: {

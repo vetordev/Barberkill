@@ -1,6 +1,7 @@
 import { Client } from '../models/Client';
 import { Request, Response } from 'express';
 import { Schedule } from '../models/Schedule';
+import * as shajs from 'sha.js';
 
 export class ClientController {
 
@@ -8,6 +9,8 @@ export class ClientController {
 
     // Recebendo parâmetros do corpo da requisição
     // const { name, email } = req.body;
+    
+    req.body.password = shajs('sha512').update(req.body.password).digest('hex');
 
     Client.create(req.body).then(client => {
       return res.json(client);
@@ -25,6 +28,7 @@ export class ClientController {
     }).catch(error => {
       console.log(error);
     });
+    
   }
 
   static findByEmail(req: Request, res: Response){
@@ -92,6 +96,19 @@ export class ClientController {
     }).catch(error => {
       console.log(error)
     });
+  }
+
+  static destroy(req: Request, res: Response){
+
+    const { id } = req.params;
+
+    Client.destroy({
+      where: { id }
+    }).then(client => {
+      return res.json(client);
+    }).catch(error => {
+      console.log(error);
+    })
   }
 }
 
