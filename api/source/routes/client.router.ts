@@ -28,6 +28,9 @@ class ClientRouter implements Routers {
     //Deletar um client
     this.application.delete('/clients/:id', ClientController.destroy);
 
+    //Logar um cliente
+    this.application.get('/clients/:email/login', ClientController.loginClient);
+
     return this.application;
   }
 }

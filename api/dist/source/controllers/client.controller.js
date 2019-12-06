@@ -89,5 +89,22 @@ class ClientController {
             console.log(error);
         });
     }
+    static loginClient(req, res) {
+        const { email } = req.params;
+        let { password } = req.query;
+        password = shajs('sha512').update(password).digest('hex');
+        Client_1.Client.findOne({
+            attributes: { exclude: ['createdAt', 'updatedAt'] },
+            where: {
+                email, password
+            }
+        }).then(client => {
+            if (client === null)
+                return res.status(400).json({ error: "Email or password incorrect" });
+            return res.json(client);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
 }
 exports.ClientController = ClientController;
