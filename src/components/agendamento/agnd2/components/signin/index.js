@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import * as sha from 'sha.js';
 
 import api from '../../../../../services/api';
 import './styles.css';
+import { isNumber } from 'util';
 
 export default function Signin () {
 
@@ -40,7 +42,7 @@ export default function Signin () {
 
     return (
         <signin>
-            <input type="password" name="pass" id="pass" onChange={ event => setPassword(event.target.value) } placeholder="Sua senha" required/>
+            <input type="password" name="pass" id="pass" onChange={ event => setPassword(sha('sha512').update(event.target.value).digest('hex')) } placeholder="Sua senha" required/>
             <p> { incorrectPass } </p>
             <Link to="/agnd3">
                 <button type="button" onClick={fetchLogin}>Logar</button>
