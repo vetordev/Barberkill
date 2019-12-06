@@ -199,8 +199,6 @@ export default function Client() {
                             </div>
                             </>
                         )) } */}
-                        
-                        <button onClick={ saveUpdatesShe } className="btn-save">Salvar</button>
 
                         <div id="btn-random">
                         <button onClick={ destroyClient } id="btn-del">Excluir conta</button>

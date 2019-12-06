@@ -7,6 +7,7 @@ import './styles.css';
 
 export default function Agnd3() {
     const date = localStorage.getItem('date');
+    const horary = localStorage.getItem('horary');
     const service = localStorage.getItem('service');
     const employee = localStorage.getItem('employee');
     const client_id = localStorage.getItem('client_id');
@@ -29,11 +30,6 @@ export default function Agnd3() {
         console.log(data);
         await api.post('/schedules', data);
     }
-
-    // async function storageSchedule() {
-    //     const responseSch = await api.get('/schedules');
-        
-    // }
     
 
     return (

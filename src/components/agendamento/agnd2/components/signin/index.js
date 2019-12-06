@@ -40,7 +40,7 @@ export default function Signin () {
 
     return (
         <signin>
-            <input type="password" name="pass" id="pass" onChange={ event => setPassword(event.target.value) } placeholder="Sua senha"/>
+            <input type="password" name="pass" id="pass" onChange={ event => setPassword(event.target.value) } placeholder="Sua senha" required/>
             <p> { incorrectPass } </p>
             <Link to="/agnd3">
                 <button type="button" onClick={fetchLogin}>Logar</button>
