@@ -20,7 +20,7 @@ class ScheduleController {
                     association: "services", attributes: ['service', "value"]
                 },
                 {
-                    association: "clients", attributes: ['name']
+                    association: "clients", attributes: ['name', 'cellphone']
                 }
             ]
         }).then(schedules => {
