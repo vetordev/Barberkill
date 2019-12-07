@@ -6,33 +6,26 @@ import { faUserCircle} from '@fortawesome/free-solid-svg-icons';
 
 import './styles.css';
 
-import Client from '../../pages/client';
+// import userMenu from './components/userMenu';
 
 export default function Banner() {
     
-    const [cli, setCli] = useState('');
-    const [ico, setIco] = useState('');
+    const [menu, setMenu] = useState('');
 
-    // useEffect(() => {
-    //     const login_cli = localStorage.getItem('client_id');
-
-    //     if ( login_cli != null)
-
-    // }, [])
-    function stateClient() {
-        
-        const login_cli = localStorage.getItem('client_id');
-
-        if (cli == '' && login_cli != '')
-            setCli(<Client />)
-        else setCli('');
+    function stateMenu() {
+        // if (menu == '') {
+        //     setMenu(<userMenu />)
+        // }else setMenu('');
 
     }
 
     return (
         <div id="banner">
-                <FontAwesomeIcon icon={faUserCircle} id="user-ico" onClick={stateClient}/>
-            {cli}
+                <div id="user-container">
+                    <FontAwesomeIcon icon={faUserCircle} id="user-ico" onClick={stateMenu}/>
+                    {menu}
+                </div>
+            {menu}
         </div>
     )
 };

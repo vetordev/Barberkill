@@ -58,20 +58,24 @@ export default function Agnd1() {
         setEmployeeSelected(employee);
         localStorage.setItem('employee_id', employee);
 
-        defineEmployeeName();
+        defineEmployeeName(employee);
     }
 
     async function defineEmployeeName() {
-        const employeeLocal = localStorage.getItem('employee_id');
+        
+        var employeeLocal = localStorage.getItem('employee_id');
 
-        if (employeeLocal != 'any') {
-
-            const responseEmployeeName = await api.get('/employees');
-            responseEmployeeName.data.forEach(employee => {
-                if (employee.id == employeeLocal)
-                    localStorage.setItem('employee', employee.name);
-            })
+        if (employeeLocal == 'any') {
+            employeeLocal = Math.round(Math.random() * ((employees.length-1) - 0) + 0);
+            const employeeAny = employees[employeeLocal].id;
+            localStorage.setItem('employee_id', employeeAny);
         }
+
+        const responseEmployeeName = await api.get('/employees');
+        responseEmployeeName.data.forEach(employee => {
+            if (employee.id == employeeLocal)
+                localStorage.setItem('employee', employee.name);
+        })
     }
 
     function goNext() {

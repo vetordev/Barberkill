@@ -54,7 +54,13 @@ div#images-port {
 div#images-port div {
     width: 450px;
     height: 350px;
-    border-radius: 4px;  
+    border-radius: 2px;  
+    /* -webkit-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.73);
+    -moz-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.73);
+    box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.73); */
+    -webkit-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.86);
+-moz-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.86);
+box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.86);
 }
 div#images-port #img1 {
     background: url('./img/image1.png');

@@ -35,7 +35,7 @@ export default function Client() {
              localStorage.clear();
         });
     }
-    const logout = () => localStorage.clear();    
+    
 
     useEffect(() => {
         async function loadInfoSche() {
@@ -138,7 +138,7 @@ export default function Client() {
                 <div id="client-container">
                     <div id="personal-data">
                     <p id="title">Seus dados</p>
-
+                    <span>Clique para editar.</span>
                         <div id="container-personal">
                             <div className="field">
                                 <label htmlFor="name">Seu nome</label>
@@ -202,7 +202,7 @@ export default function Client() {
 
                         <div id="btn-random">
                         <button onClick={ destroyClient } id="btn-del">Excluir conta</button>
-                        <button onClick={ logout } id="btn-logout"><FontAwesomeIcon icon={faPowerOff} className="ico"/></button>
+                        {/* <button onClick={ logout } id="btn-logout"><FontAwesomeIcon icon={faPowerOff} className="ico"/></button> */}
                         </div>
                         </div>
 
