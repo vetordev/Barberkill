@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
-
-import Sidebar from '../../components/sidebar';
 import api from '../../services/api';
 
 import './styles.css';
@@ -15,16 +11,16 @@ export default function Client() {
     const [tel, setTel] = useState('');
     const [cel, setCel] = useState('');
 
-    const [schedules, setSchedules] = useState([]);
+    // const [schedules, setSchedules] = useState([]);
 
-    const [employee, setEmployee] = useState('');
-    const [service, setService] = useState('');
-    const [date, setDate] = useState('');
-    const [horary, setHorary] = useState('');
-    const [obs, setObs] = useState('-');
+    // const [employee, setEmployee] = useState('');
+    // const [service, setService] = useState('');
+    // const [date, setDate] = useState('');
+    // const [horary, setHorary] = useState('');
+    // const [obs, setObs] = useState('-');
 
     const [btnCli, setBtnCli] = useState('');
-    const [btnSche, setBtnSche] = useState('');
+    
 
     const destroyClient = () => {
 
@@ -50,13 +46,12 @@ export default function Client() {
             setTel(responseInfo.data[0].clients.telephone);
             setCel(responseInfo.data[0].clients.cellphone);
 
-            setSchedules(responseInfo.data);
+            // setSchedules(responseInfo.data);
             
         }
 
         loadInfoSche();
     }, []);
-
     async function saveUpdatesCli() {
         const clientLogin = localStorage.getItem('client_id');
 

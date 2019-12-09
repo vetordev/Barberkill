@@ -10,7 +10,6 @@ import Timer from '../../timer';
 
 
 export default function Agnd1() {
-
     const [services, setServices] = useState([]);
     const [employees, setEmployees] = useState([]);
     
@@ -89,9 +88,9 @@ export default function Agnd1() {
         
         else {
             if (loginState == null){
-                setLink('/Agnd2');
+                setLink('/agnd2');
             }
-            else setLink('/Agnd3');
+            else setLink('/agnd3');
         }
     }
 
@@ -121,9 +120,9 @@ export default function Agnd1() {
                     <Calendar />
                     <Timer />
                 </div>
-            <Link to={ link }>
-                <button class="btn-smaller" onClick={ goNext }>Avançar</button>
-            </Link>
+                <Link to={ link }>
+                    <button className="btn-smaller" onClick={ goNext }>Avançar</button>
+                </Link>
         </div>
     );
 };

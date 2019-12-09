@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import api from '../../../services/api';
+import BtnBack from '../components/btnBack';
 
 import './styles.css';
 
-export default function Agnd3() {
+export default function Agnd3({history}) {
     const date = localStorage.getItem('date');
     const horary = localStorage.getItem('horary');
     const service = localStorage.getItem('service');
@@ -13,11 +14,11 @@ export default function Agnd3() {
     const client_id = localStorage.getItem('client_id');
     const employee_id = localStorage.getItem('employee_id');
     const service_id = localStorage.getItem('service_id');
+
     const [obs, setObs] = useState('');
+    // const [confirm, setConfirm] = useState('');
 
     async function confirmSchedule() {
-        
-        alert('Agendamento confirmado com sucesso!')
 
         const data = {
             client_id: client_id,
@@ -27,7 +28,6 @@ export default function Agnd3() {
             service_id: service_id,
             observation: obs
         }
-        console.log(data);
         await api.post('/schedules', data);
     }
     
@@ -42,7 +42,7 @@ export default function Agnd3() {
                 <p>Service: <span>{ service }</span></p>
                 <p>Employee: <span>{ employee }</span></p> */}
                 
-                {/* <label htmlFor="obs"></label> */}
+                {/* <label htmlFor="obs"></label> */} 
                 <textarea id="text-agnd3"
                     name="obs" 
                     placeholder="Gostaria de adicionar alguma observação? Caso não, deixe em branco."
@@ -50,7 +50,13 @@ export default function Agnd3() {
                 >
                     
                 </textarea>
-                <button onClick={ confirmSchedule }>Confirmar agendamento</button>
+
+                <div>
+                <Link to="/agnd4">
+                    <button onClick={ confirmSchedule }>Confirmar agendamento</button>
+                </Link>
+                <BtnBack direction="/agnd1"/>
+                </div>
         </div>
     )
 }
