@@ -37,19 +37,25 @@ export default function Agnd1() {
     }
 
     async function defineEmployeesList() {
-        const serviceLocal = localStorage.getItem('service_id');
 
-        if (serviceLocal != ''){
-            // pegar employees que realizam o serviço com id especificado
-            const responseEmployees = await api.get(`/services/${serviceLocal}/employees`);
-            setEmployees(responseEmployees.data[0].employees);
+        try {
+            const serviceLocal = localStorage.getItem('service_id');
 
-            // pegar o nome do serviço com id especificado
-            const responseServiceName = await api.get(`/services`);
-            responseServiceName.data.forEach(service => {
-                if (service.id == serviceLocal) 
-                    localStorage.setItem('service', service.service);
-            })
+            if (serviceLocal != ''){
+                // pegar employees que realizam o serviço com id especificado
+                const responseEmployees = await api.get(`/services/${serviceLocal}/employees`);
+                setEmployees(responseEmployees.data[0].employees);
+
+                // pegar o nome do serviço com id especificado
+                const responseServiceName = await api.get(`/services`);
+                responseServiceName.data.forEach(service => {
+                    if (service.id == serviceLocal) 
+                        localStorage.setItem('service', service.service);
+                })
+            }
+        }
+        catch(error) {
+            alert("Antes disso, escolha um serviço!");
         }
     }
 
@@ -62,19 +68,24 @@ export default function Agnd1() {
 
     async function defineEmployeeName() {
         
-        var employeeLocal = localStorage.getItem('employee_id');
+        try {
+            var employeeLocal = localStorage.getItem('employee_id');
 
-        if (employeeLocal == 'any') {
-            employeeLocal = Math.round(Math.random() * ((employees.length-1) - 0) + 0);
-            const employeeAny = employees[employeeLocal].id;
-            localStorage.setItem('employee_id', employeeAny);
+            if (employeeLocal == 'any') {
+                employeeLocal = Math.round(Math.random() * ((employees.length-1) - 0) + 0);
+                const employeeAny = employees[employeeLocal].id;
+                localStorage.setItem('employee_id', employeeAny);
+            }
+
+            const responseEmployeeName = await api.get('/employees');
+            responseEmployeeName.data.forEach(employee => {
+                if (employee.id == employeeLocal)
+                    localStorage.setItem('employee', employee.name);
+            })
         }
-
-        const responseEmployeeName = await api.get('/employees');
-        responseEmployeeName.data.forEach(employee => {
-            if (employee.id == employeeLocal)
-                localStorage.setItem('employee', employee.name);
-        })
+        catch(error) {
+            alert("Antes disso, escolha um serviço!");
+        }
     }
 
     function goNext() {

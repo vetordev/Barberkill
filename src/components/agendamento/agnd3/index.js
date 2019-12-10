@@ -55,7 +55,7 @@ export default function Agnd3({history}) {
                 <Link to="/agnd4">
                     <button onClick={ confirmSchedule }>Confirmar agendamento</button>
                 </Link>
-                <BtnBack direction="/agnd1"/>
+                {/* <BtnBack direction="/agnd1"/> */}
                 </div>
         </div>
     )

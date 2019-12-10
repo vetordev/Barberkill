@@ -6,7 +6,7 @@ import { faUserCircle} from '@fortawesome/free-solid-svg-icons';
 
 import './styles.css';
 
-// import userMenu from './components/userMenu';
+import UserMenu from './components/userMenu';
 
 // import componentss from './'
 
@@ -15,9 +15,9 @@ export default function Banner() {
     const [menu, setMenu] = useState('');
 
     function stateMenu() {
-        // if (menu == '') {
-        //     setMenu(<userMenu />)
-        // }else setMenu('');
+        if (menu == '') {
+            setMenu(<UserMenu />)
+        }else setMenu('');
 
     }
 
@@ -27,7 +27,6 @@ export default function Banner() {
                     <FontAwesomeIcon icon={faUserCircle} id="user-ico" onClick={stateMenu}/>
                     {menu}
                 </div>
-            {menu}
         </div>
     )
 };

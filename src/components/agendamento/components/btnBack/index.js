@@ -13,7 +13,7 @@ export default class BtnBack extends Component {
         return (
         <div id="container-btn-back">
             {/* <Link to={btnback.props.id}> */}
-                <button onClick={event => click(event.target.direction)} direction={this.props.direction} name="btnback" id="btnback">back</button>
+                <button onClick={event => click(event.target.direction)} direction={this.props.direction} id="btnback">back</button>
             {/* </Link> */}
         </div>
         )
