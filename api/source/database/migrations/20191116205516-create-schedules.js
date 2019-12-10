@@ -14,7 +14,7 @@ module.exports = {
         allowNull: false
       },
       horary: {
-        type: Sequelize.STRING(4),
+        type: Sequelize.STRING(5),
         allowNull: false
       },
       client_id: {
