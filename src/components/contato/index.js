@@ -5,7 +5,17 @@ import './styles.css';
 const Contato = () => (
     <div id="contato">
         <div className="container-aux" id="aux-port">
-            <div id="container-contacts">
+        <h1>Entre em contato</h1>
+            <div id="rowaa">
+                <form action="*">
+                    <input type="text" name="name" id="name" placeholder="Seu nome"/>
+                    <input type="text" name="email" id="email" placeholder="Seu e-mail"/>
+                    <textarea placeholder="Sua dúvida, sugestão, elogio ou reclamação." name="msg" id="msg" cols="30" rows="10"></textarea> 
+                    <button>Enviar</button>
+                </form>
+                <div id="coisa"></div>
+            </div>
+            {/* <div id="container-contacts">
                 <div id="facebook">
                     <div id="facebook-img"></div>
                     <p>@barberkill.ofc</p>
@@ -23,16 +33,10 @@ const Contato = () => (
                 <p>
                 Praça Miguel Ortega, 135 - Parque Assunção, Taboão da Serra
                 </p>
-            </div>
+            </div> */}
         </div>
     </div>
 );
 
 export default Contato;
 
-{/* <h1>Entre em contato</h1> */}
-            {/* <form action="*"> */}
-                {/* <input type="text" name="name" id="name" placeholder="Seu nome"/>
-                <input type="text" name="email" id="email" placeholder="Seu e-mail"/>
-                <textarea placeholder="Sua dúvida, sugestão, elogio ou reclamação." name="msg" id="msg" cols="30" rows="10"></textarea> */}
-            {/* </form> */}

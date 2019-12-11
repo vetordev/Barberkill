@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 import api from '../../services/api';
 
 import './styles.css';
@@ -11,7 +14,7 @@ export default function Client() {
     const [tel, setTel] = useState('');
     const [cel, setCel] = useState('');
 
-    // const [schedules, setSchedules] = useState([]);
+    const [schedules, setSchedules] = useState([]);
 
     // const [employee, setEmployee] = useState('');
     // const [service, setService] = useState('');
@@ -27,7 +30,7 @@ export default function Client() {
         const client_id = localStorage.getItem('client_id');
 
         api.delete(`/clients/${client_id}`).then(() => {
-             alert('User removed')
+             alert('Ficamos tristes por você ter nos deixado :(')
              localStorage.clear();
         });
     }
@@ -46,7 +49,7 @@ export default function Client() {
             setTel(responseInfo.data[0].clients.telephone);
             setCel(responseInfo.data[0].clients.cellphone);
 
-            // setSchedules(responseInfo.data);
+            setSchedules(responseInfo.data);
             
         }
 
@@ -128,82 +131,60 @@ export default function Client() {
         // await api.put(`/clients/${clientLogin}/schedules`)
     }
 
+    function closeClient() {
+        
+    }
+
     return (
             <div id="clients">
                 <div id="client-container">
                     <div id="personal-data">
-                    <p id="title">Seus dados</p>
-                    <span>Clique para editar.</span>
-                        <div id="container-personal">
-                            <div className="field">
-                                <label htmlFor="name">Seu nome</label>
-                                <input type="text" id="name" name="name" className="input-client" value={ name } onChange={ event => handleFieldsCli(event.target.value, "name") }/>
-                            </div>
+                        <p id="title">Seus dados
+                        <FontAwesomeIcon icon={faTimes} id="close-client" onClick={closeClient}/>
+                        </p>
+                        <span>Clique para editar.</span>
+                            <div id="container-personal">
+                                <div className="field">
+                                    <label htmlFor="name">Seu nome</label>
+                                    <input type="text" id="name" name="name" className="input-client" value={ name } onChange={ event => handleFieldsCli(event.target.value, "name") }/>
+                                </div>
 
-                            <div className="field">
-                                <label htmlFor="email">E-mail</label>
-                                <input type="text" id="email" name="email" className="input-client" value={ email } onChange={ event => handleFieldsCli(event.target.value, "email") }/>
-                            </div>
+                                <div className="field">
+                                    <label htmlFor="email">E-mail</label>
+                                    <input type="text" id="email" name="email" className="input-client" value={ email } onChange={ event => handleFieldsCli(event.target.value, "email") }/>
+                                </div>
 
-                            <div className="field">
-                                <label htmlFor="cpf">CPF</label>
-                                <input type="text" id="cpf" name="cpf" className="input-client" value={ cpf } onChange={ event => handleFieldsCli(event.target.value, "cpf") }/>
-                            </div>
+                                <div className="field">
+                                    <label htmlFor="cpf">CPF</label>
+                                    <input type="text" id="cpf" name="cpf" className="input-client" value={ cpf } onChange={ event => handleFieldsCli(event.target.value, "cpf") }/>
+                                </div>
 
-                            <div className="field">
-                                <label htmlFor="tel">Telefone:</label>
-                                <input type="text" id="tel" name="tel" className="input-client" value={ tel } onChange={ event => handleFieldsCli(event.target.value, "tel") }/>
-                            </div>
+                                <div className="field">
+                                    <label htmlFor="tel">Telefone:</label>
+                                    <input type="text" id="tel" name="tel" className="input-client" value={ tel } onChange={ event => handleFieldsCli(event.target.value, "tel") }/>
+                                </div>
 
-                            <div className="field">
-                                <label htmlFor="cel">Celular:</label>
-                                <input type="text" id="cel" name="cel" className="input-client" value={ cel } onChange={ event => handleFieldsCli(event.target.value, "cel") }/>
+                                <div className="field">
+                                    <label htmlFor="cel">Celular:</label>
+                                    <input type="text" id="cel" name="cel" className="input-client" value={ cel } onChange={ event => handleFieldsCli(event.target.value, "cel") }/>
+                                </div>
+                                { btnCli }
                             </div>
-                            { btnCli }
-                        </div>
                     </div>
-
-                    {/* <div id="schedules-data">
-                        <p id="title">Seus agendamentos</p>
-                        <div id="container-schedule">
-                        { schedules.map(schedule => (
-                            <>
-                            <div className="field">
-                                <label htmlFor="service">Serviço</label>
-                                <input type="text" name="service" id="service" className="input-client" value={ schedule.services.service } onChange={ event => setService(event.target.value) }/>
-                            </div>
-
-                            <div className="field">
-                                <label htmlFor="service">Funcionário</label>
-                                <input type="text" id="employee" className="input-client" value={ schedule.employees.name } onChange={ event => setEmployee(event.target.value) }/>
-                            </div>
-
-                            <div className="field">
-                                <label htmlFor="service">Data</label>
-                                <input type="text" id="date" className="input-client" value={ schedule.date } onChange={ event => setDate(event.target.value) }/>
-                            </div>
-
-                            <div className="field">
-                                <label htmlFor="service">Horário</label>
-                                <input type="text" id="horary" className="input-client" value={ schedule.horary } onChange={ event => setHorary(event.target.value) }/>
-                            </div>
-
-                            <div className="field">
-                                <label htmlFor="service">Observações</label>
-                                <input type="text" id="obs" className="input-client" value={ schedule.observation } onChange={ event => setObs(event.target.value) }/>
-                            </div>
-                            </>
-                        )) } */}
+                    <p id="title">Seus agendamentos</p>
+                    { schedules.map( schedule => 
+                        <div id="sch">
+                            <p>Serviço: { schedule.services.service } </p>
+                            <p>Profissional: { schedule.employees.name }</p>
+                            <p>Data: { schedule.date }, às { schedule.horary }</p>
+                        </div>
+                    )}
 
                         <div id="btn-random">
-                        <button onClick={ destroyClient } id="btn-del">Excluir conta</button>
-                        {/* <button onClick={ logout } id="btn-logout"><FontAwesomeIcon icon={faPowerOff} className="ico"/></button> */}
+                            <button onClick={ destroyClient } id="btn-del">Excluir conta</button>
                         </div>
-                        </div>
-
-                        {/* <FontAwesomeIcon icon={ faEdit } id="user-ico" onClick={stateClient}/> */}
                     </div>
-    );
-
+                </div>
+            );
 
 }

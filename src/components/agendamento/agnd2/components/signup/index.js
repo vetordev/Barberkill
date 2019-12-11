@@ -38,9 +38,19 @@ export default function Signup() {
         localStorage.setItem('client_id', response.data.id);
     }
 
+    function validation(field) {
+        // alert(this.event.keyCode)
+        var last = field[field.length-1];
+        const num = [0,1,2,3,5,6,4,7,8,9];
+        for (var i = 0; i < num.length -1; i++) {
+            if (last == num[i])
+                last = "";
+        }
+    }
+
     return (
         <div id="signup">
-            <input type="text" name="name" id="name" placeholder="Seu nome" onChange={ event => setName(event.target.value) } />
+            <input type="text" name="name" id="name" placeholder="Seu nome" onChange={ event => setName(event.target.value) } onInput={ event => validation(event.target.value) }/>
             <input type="text" name="cpf" id="cpf" placeholder="CPF" onChange={ event => setCpf(event.target.value) } />
             <input type="tel" name="cel" id="cel" placeholder="Telefone" onChange={ event => setCel(event.target.value) } />
             <input type="password" name="password1" id="password1" placeholder="Senha" onChange={ event => setPassword1(event.target.value) } />

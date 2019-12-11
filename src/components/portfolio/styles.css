@@ -44,31 +44,78 @@ div#images-port {
     /* background: crimson; */
     width: 90%;
     height: 500px;
+}
+.row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     /* padding: 0px 80px; */
     z-index: 5;
 }
-div#images-port div {
-    width: 450px;
-    height: 350px;
-    border-radius: 2px;  
-    /* -webkit-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.73);
-    -moz-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.73);
-    box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.73); */
-    -webkit-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.86);
--moz-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.86);
-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.86);
-    
+div#images-port .row div {
+    min-width: 200px;
+    height: 150px;
+    max-width: 300px;
+    cursor: pointer;
 }
+
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(2);
+    }
+}
+div#images-port .row div:hover {
+    animation: zoom 0.4s;   
+    transform: scale(2);
+    border-radius: 2px;  
+    -webkit-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.86);
+    -moz-box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.86);
+    box-shadow: 0px 13px 15px 10px rgba(0,0,0,0.86);
+}
+
+
 div#images-port #img1 {
     background: url('./img/image1.png');
     background-size: cover;
 }
 div#images-port #img2 {
     background: url('./img/image2.png');
+    background-size: cover;
+}
+div#images-port #img3 {
+    background: url('./img/image8.jpg');
+    background-size: cover;
+}
+div#images-port #img4 {
+    background: url('./img/image3.jpg');
+    background-size: cover;
+}
+div#images-port #img5 {
+    background: url('./img/image5.jpg');
+    background-size: cover;
+}
+div#images-port #img6 {
+    background: url('./img/image6.jpeg');
+    background-size: cover;
+}
+div#images-port #img7 {
+    background: url('./img/image7.jpg');
+    background-size: cover;
+}
+div#images-port #img8 {
+    background: url('./img/image4.jpg');
+    background-size: cover;
+}
+div#images-port #img9 {
+    background: url('./img/image9.jpg');
+    background-size: cover;
+}
+div#images-port #img10 {
+    background: url('./img/image10.jpg');
     background-size: cover;
 }
 button {

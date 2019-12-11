@@ -14,8 +14,9 @@ div#clients {
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 80%
+    left: 80%;
     /* z-index: 1 !important; */
+    animation: arising 0.4s;
     
 }
 
@@ -25,6 +26,10 @@ div#client-container {
     background: rgb(219, 219, 219);
     display: flex;
     flex-direction: column;
+    
+    -webkit-box-shadow: 4px 4px 18px -1px rgba(0,0,0,0.53);
+    -moz-box-shadow: 4px 4px 18px -1px rgba(0,0,0,0.53);
+    box-shadow: 4px 4px 18px -1px rgba(0,0,0,0.53);
 }
 
 div#personal-data {
@@ -120,11 +125,40 @@ div#container-personal, div#container-schedule {
     margin-right: 5px;
 }
 #btn-random {
-    margin-top: 250px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     /* top: calc(100vh - 200px); */
     /* top: 100vh; */
+}
+
+#close-client {
+    margin-left: 40%;
+    cursor: pointer;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes arising {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 80%;
+    }
+}
+
+@keyframes leftingBtn {
+    from {
+        left: 31px;
+    }
+}
+
+#sch {
+    width: 100%;
+    height: auto;
+    padding: 10px 10px;
+    background: #390A0A;
 }

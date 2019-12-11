@@ -5,8 +5,8 @@ div#espaco {
     height: 200vh;
     position: relative;
     /* top: 100vh; */
-    /* background: rgb(39, 36, 36); */
-    background: #4A4343;
+    background: rgb(39, 36, 36);
+    /* background: #4A4343; */
     color: #FFF;
     padding: 0;
     margin: 0;
@@ -68,8 +68,8 @@ div#cell-container .cell .info-spc{
 }
 
 div.cell1 .info-spc{
-    border-bottom: 5px /*rgb(48, 66, 170)*/ #2B2129 solid;
-    border-right: 5px #2B2129 solid;
+    border-bottom: 5px rgb(102, 18, 18) solid;
+    border-right: 5px rgb(102, 18, 18) solid;
     /* border-radius: 5px; */
 }
 

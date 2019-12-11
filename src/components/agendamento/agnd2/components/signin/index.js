@@ -10,6 +10,7 @@ export default function Signin () {
 
     const [password, setPassword] = useState('');
     const [incorrectPass, setIncorrectPass] = useState('');
+    const [link, setLink] = useState('/agnd2');
     const email = localStorage.getItem('email');
     async function fetchLogin() {
 
@@ -23,6 +24,7 @@ export default function Signin () {
                 aux = true;
                 setIncorrectPass('');
                 setPassword('');
+                setLink('/agnd3');
                 // storageCliId();
                 break;
             }
@@ -31,6 +33,7 @@ export default function Signin () {
         if (aux == false) {
             setIncorrectPass('Senha incorreta');
             setPassword('');
+            setLink('/agnd2');
         }
 
     }
@@ -41,12 +44,12 @@ export default function Signin () {
     }
 
     return (
-        <signin>
+        <>
             <input type="password" name="pass" id="pass" onChange={ event => setPassword(sha('sha512').update(event.target.value).digest('hex')) } placeholder="Sua senha" required/>
             <p> { incorrectPass } </p>
-            <Link to="/agnd3">
+            <Link to={link}>
                 <button type="button" onClick={fetchLogin}>Logar</button>
             </Link>
-        </signin>
+        </>
     );
 };

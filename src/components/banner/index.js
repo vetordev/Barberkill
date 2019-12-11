@@ -6,27 +6,47 @@ import { faUserCircle} from '@fortawesome/free-solid-svg-icons';
 
 import './styles.css';
 
-import UserMenu from './components/userMenu';
-
-// import componentss from './'
+import Client from '../../pages/client';
 
 export default function Banner() {
     
-    const [menu, setMenu] = useState('');
+    const [menu, setMenu] = useState('none');
+    const [cli, setCli] = useState('');
+    const [logo, setLogo] = useState('block');
+
+    function stateClient() {
+
+        if (cli == ''){
+            setCli(<Client />);
+            setMenu('none');
+            setLogo('none')
+        }
+        else {
+            setCli('');
+            setLogo('none');
+        }
+    }
+
+    const logout = () => localStorage.clear(); 
 
     function stateMenu() {
-        if (menu == '') {
-            setMenu(<UserMenu />)
-        }else setMenu('');
+        if (menu == 'none') {
+            setMenu('block')
+        }else setMenu('none');
 
     }
 
     return (
         <div id="banner">
                 <div id="user-container">
-                    <FontAwesomeIcon icon={faUserCircle} id="user-ico" onClick={stateMenu}/>
-                    {menu}
+                    <FontAwesomeIcon icon={faUserCircle} id="user-ico" onClick={stateMenu}/>    
+                    <div id="user-menu" style={{display: menu}}>
+                        <button className="btn-user-menu" id="line-separator" onClick={stateClient}>Minha conta</button>
+                        <button className="btn-user-menu" onClick={logout}>Sair</button>
+                    </div>
+                    
                 </div>
+                {cli}
         </div>
     )
 };
