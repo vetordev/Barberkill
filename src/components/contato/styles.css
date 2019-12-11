@@ -33,7 +33,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 #container-contacts {
@@ -65,7 +65,7 @@ form {
     border: none;
 }
 #instagram-img {
-    background: url('./img/instagram.png');
+    /* background: url('./img/instagram.png'); */
     background-size: cover
 }
 #whatsapp {
@@ -88,10 +88,22 @@ div#contato #rowaa {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background: cyan;
+    /* background: cyan; */
 }
-#coisa {
-    width: 300px;
-    height: 300px;
-    background: red;
+#social {
+    width: 150px;
+    height: 500px;
+    /* background: red; */
+    margin: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#social div {
+    height: 130px;
+    width: 130px;
+    background: blue;
+    border-radius: 50%;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle} from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 import './styles.css';
 
@@ -15,13 +15,15 @@ export default function Banner() {
     const [logo, setLogo] = useState('block');
 
     function stateClient() {
+        const userState = localStorage.getItem('client_id');
 
-        if (cli == ''){
+        if (cli == '' && userState != null){
             setCli(<Client />);
             setMenu('none');
             setLogo('none')
         }
         else {
+            alert('Você precisa fazer login primeiro!')
             setCli('');
             setLogo('none');
         }

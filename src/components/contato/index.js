@@ -1,5 +1,8 @@
 import React from 'react';
 
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {  } from '@fortawesome/free-solid-svg-icons';
+
 import './styles.css';
 
 const Contato = () => (
@@ -13,7 +16,11 @@ const Contato = () => (
                     <textarea placeholder="Sua dúvida, sugestão, elogio ou reclamação." name="msg" id="msg" cols="30" rows="10"></textarea> 
                     <button>Enviar</button>
                 </form>
-                <div id="coisa"></div>
+                <div id="social">
+                    <div id="insta-logo"></div>
+                    <div id="face-logo"></div>
+                    <div id="yt-logo"></div>
+                </div>
             </div>
             {/* <div id="container-contacts">
                 <div id="facebook">

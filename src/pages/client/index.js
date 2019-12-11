@@ -30,8 +30,8 @@ export default function Client() {
         const client_id = localStorage.getItem('client_id');
 
         api.delete(`/clients/${client_id}`).then(() => {
-             alert('Ficamos tristes por você ter nos deixado :(')
-             localStorage.clear();
+            alert('Ficamos tristes por você ter nos deixado :(')
+            localStorage.clear();
         });
     }
     
@@ -42,14 +42,18 @@ export default function Client() {
 
             const responseInfo = await api.get(`/clients/${clientLogin}/schedules`);
 
-            // console.log(responseInfo.data[0].clients.name);
-            setName(responseInfo.data[0].clients.name);
-            setEmail(responseInfo.data[0].clients.email);
-            setCpf(responseInfo.data[0].clients.cpf);
-            setTel(responseInfo.data[0].clients.telephone);
-            setCel(responseInfo.data[0].clients.cellphone);
+            try {
+                setName(responseInfo.data[0].clients.name);
+                setEmail(responseInfo.data[0].clients.email);
+                setCpf(responseInfo.data[0].clients.cpf);
+                setTel(responseInfo.data[0].clients.telephone);
+                setCel(responseInfo.data[0].clients.cellphone);
 
-            setSchedules(responseInfo.data);
+                setSchedules(responseInfo.data);
+            }catch(error) {
+                return false;
+            }
+            
             
         }
 
