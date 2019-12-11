@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faUserSlash } from '@fortawesome/free-solid-svg-icons';
 
 import api from '../../services/api';
 
@@ -50,7 +50,8 @@ export default function Client() {
                 setCel(responseInfo.data[0].clients.cellphone);
 
                 setSchedules(responseInfo.data);
-            }catch(error) {
+            }
+            catch(error) {
                 return false;
             }
             
@@ -144,7 +145,8 @@ export default function Client() {
                 <div id="client-container">
                     <div id="personal-data">
                         <p id="title">Seus dados
-                        <FontAwesomeIcon icon={faTimes} id="close-client" onClick={closeClient}/>
+                        <FontAwesomeIcon icon={faTimes} className="icon" id="close-client" onClick={closeClient}/>
+                        <FontAwesomeIcon icon={faUserSlash} className="icon" onClick={ destroyClient } />
                         </p>
                         <span>Clique para editar.</span>
                             <div id="container-personal">
@@ -184,9 +186,6 @@ export default function Client() {
                         </div>
                     )}
 
-                        <div id="btn-random">
-                            <button onClick={ destroyClient } id="btn-del">Excluir conta</button>
-                        </div>
                     </div>
                 </div>
             );

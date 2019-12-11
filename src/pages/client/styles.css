@@ -95,8 +95,8 @@ div#personal-data .btn-center {
     background: rgb(19, 7, 7);
     align-items: center;
     font-family: 'Lato', sans-serif;
-    font-size: 24px;
-    padding: 20px;
+    font-size: 22px;
+    padding-left: 20px;
     /* position: fixed; */
 }
 
@@ -134,9 +134,25 @@ div#container-personal, div#container-schedule {
     /* top: 100vh; */
 }
 
-#close-client {
-    margin-left: 40%;
+#clients .icon {
     cursor: pointer;
+}
+
+#clients #close-client {
+    margin: 0 10px 0 40%;
+}
+
+#clients button {
+    -webkit-box-shadow: 0px 6px 12px -5px rgba(0,0,0,0.56);
+    -moz-box-shadow: 0px 6px 12px -5px rgba(0,0,0,0.56);
+    box-shadow: 0px 6px 12px -5px rgba(0,0,0,0.56);
+}
+
+#sch {
+    width: 100%;
+    height: auto;
+    padding: 10px 10px;
+    background: #390A0A;
 }
 
 /* ANIMAÇÕES */
@@ -154,11 +170,4 @@ div#container-personal, div#container-schedule {
     from {
         left: 31px;
     }
-}
-
-#sch {
-    width: 100%;
-    height: auto;
-    padding: 10px 10px;
-    background: #390A0A;
 }
