@@ -16,9 +16,16 @@ div#espaco {
     justify-content: center;
 }
 div#espaco h1 {
-    padding-top: 30px;
+    /* padding-top: 30px; */
     font-family: 'Ubuntu', sans-serif;
     font-size: 40px;
+}
+div#espaco #titlee {
+    /* height: 200px;
+    width: 200px; */
+    /* background: red; */
+    /* background: url(img/title.png);
+    background-size: cover; */
 }
 div#espaco #cell-container #part1,#part2{
     display: flex;

@@ -8,7 +8,8 @@ import './styles.css';
 const Contato = () => (
     <div id="contato">
         <div className="container-aux" id="aux-port">
-        <h1>Entre em contato</h1>
+        {/* <div id="title"></div> */}
+        <h1>Fale com a gente!</h1>
             <div id="rowaa">
                 <form action="*">
                     <input type="text" name="name" id="name" placeholder="Seu nome"/>

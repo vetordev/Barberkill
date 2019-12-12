@@ -21,6 +21,13 @@ const Portfolio = () => (
                         <div id="img9"></div>
                         <div id="img10"></div>
                     </div>
+                    <div className="row">
+                        <div id="img11"></div>
+                        <div id="img12"></div>
+                        <div id="img13"></div>
+                        <div id="img14"></div>
+                        <div id="img15"></div>
+                    </div>
                     {/* <img src="./img/image1.png" alt=""/> */}
                 </div>
         </div>

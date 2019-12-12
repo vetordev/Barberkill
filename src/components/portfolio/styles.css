@@ -42,7 +42,7 @@ div#aux-port {
 }
 div#images-port {
     /* background: crimson; */
-    width: 90%;
+    width: 100%;
     height: 500px;
 }
 .row {
@@ -54,7 +54,7 @@ div#images-port {
     z-index: 5;
 }
 div#images-port .row div {
-    min-width: 200px;
+    width: 200px;
     height: 150px;
     max-width: 300px;
     cursor: pointer;
@@ -118,6 +118,27 @@ div#images-port #img10 {
     background: url('./img/image10.jpg');
     background-size: cover;
 }
+div#images-port #img11 {
+    background: url('./img/image11.jpg');
+    background-size: cover;
+}
+div#images-port #img12 {
+    background: url('./img/image12.jpg');
+    background-size: cover;
+}
+div#images-port #img13 {
+    background: url('./img/image13.jpg');
+    background-size: cover;
+}
+div#images-port #img14 {
+    background: url('./img/image14.jpg');
+    background-size: cover;
+}
+div#images-port #img15 {
+    background: url('./img/image17.jpg');
+    background-size: cover;
+}
+
 button {
     width: 200px;
     height: 60px;

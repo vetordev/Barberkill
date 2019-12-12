@@ -5,7 +5,7 @@ import './styles.css';
 const Espaco = () => (
     <div id="espaco">
         <div className="container-aux">
-            <h1>Nosso espaço</h1>
+            <h1 id="titlee">Nosso espaço</h1>
             <div id="cell-container">
                 <div id="part1">
                     <div className="cell cell1">

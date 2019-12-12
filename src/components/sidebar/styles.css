@@ -13,6 +13,9 @@ div#container-sidebar {
     /* float: left; */
 
 }
+div#sidebar a {
+    text-decoration: none;
+}
 div#container #sidebar {
     position: fixed;
     width: 13%;
