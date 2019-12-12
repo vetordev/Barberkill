@@ -1,5 +1,6 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
+
 export const enviroment: any = {
   server: {
     port: process.env.PORT_URL || 3002,
