@@ -4,10 +4,10 @@ const dotenv = require("dotenv");
 const mailer = require("nodemailer");
 dotenv.config();
 exports.transport = mailer.createTransport({
-    host: "smtp.sendgrid.net",
-    port: 587,
+    host: process.env.HOST_MAILER,
+    port: Number(process.env.PORT_MAILER),
     auth: {
-        user: "apikey",
-        pass: "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"
+        user: process.env.USER_MAILER,
+        pass: process.env.PASS_MAILER
     }
 });
