@@ -17,7 +17,7 @@ export default function Banner() {
     function stateClient() {
         const userState = localStorage.getItem('client_id');
 
-        if (cli == ''){
+        if (cli == '' && userState != null){
             setCli(<Client />);
             setMenu('none');
             setLogo('none')
@@ -29,7 +29,10 @@ export default function Banner() {
         }
     }
 
-    const logout = () => localStorage.clear(); 
+    const logout = () => {
+        localStorage.clear(); 
+        setMenu('none');
+    }
 
     function stateMenu() {
         if (menu == 'none') {

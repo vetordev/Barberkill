@@ -23,7 +23,7 @@ export default function Client() {
     // const [obs, setObs] = useState('-');
 
     const [btnCli, setBtnCli] = useState('');
-    
+    const [cli, setCli] = useState('block')
 
     const destroyClient = () => {
 
@@ -137,15 +137,15 @@ export default function Client() {
     }
 
     function closeClient() {
-        
+        setCli('none');
     }
 
     return (
-            <div id="clients">
+            <div id="clients" style={{display: cli}}>
                 <div id="client-container">
                     <div id="personal-data">
                         <p id="title">Seus dados
-                        <FontAwesomeIcon icon={faTimes} className="icon" id="close-client" onClick={closeClient}/>
+                        <FontAwesomeIcon icon={faTimes} className="icon" id="close-client" onClick={closeClient} />
                         <FontAwesomeIcon icon={faUserSlash} className="icon" onClick={ destroyClient } />
                         </p>
                         <span>Clique para editar.</span>
@@ -178,13 +178,16 @@ export default function Client() {
                             </div>
                     </div>
                     <p id="title">Seus agendamentos</p>
+                    <div id="schedules-data">
                     { schedules.map( schedule => 
-                        <div id="sch">
+                        <div className="sch">
                             <p>Serviço: { schedule.services.service } </p>
                             <p>Profissional: { schedule.employees.name }</p>
                             <p>Data: { schedule.date }, às { schedule.horary }</p>
+                            {/* <span></span> */}
                         </div>
                     )}
+                    </div>
 
                     </div>
                 </div>
