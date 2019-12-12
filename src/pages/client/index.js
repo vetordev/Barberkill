@@ -27,12 +27,16 @@ export default function Client() {
 
     const destroyClient = () => {
 
-        const client_id = localStorage.getItem('client_id');
+        if (window.confirm("Deseja mesmo excluir sua conta?")){
+            const client_id = localStorage.getItem('client_id');
 
-        api.delete(`/clients/${client_id}`).then(() => {
-            alert('Ficamos tristes por você ter nos deixado :(')
-            localStorage.clear();
-        });
+            api.delete(`/clients/${client_id}`).then(() => {
+                alert('Ficamos tristes por você ter nos deixado :(')
+                localStorage.clear();
+            });
+        }else {
+            return 'oi';
+        }
     }
     
 
@@ -72,6 +76,7 @@ export default function Client() {
         }
 
         await api.put(`/clients/${clientLogin}`, data);
+        alert('Alterações salvas com sucesso!');
     }
 
     function handleFieldsCli(content, field) {
@@ -180,7 +185,7 @@ export default function Client() {
                     <p id="title">Seus agendamentos</p>
                     <div id="schedules-data">
                     { schedules.map( schedule => 
-                        <div className="sch">
+                        <div className="sch" key={schedule.id}>
                             <p>Serviço: { schedule.services.service } </p>
                             <p>Profissional: { schedule.employees.name }</p>
                             <p>Data: { schedule.date }, às { schedule.horary }</p>

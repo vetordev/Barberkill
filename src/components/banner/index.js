@@ -12,20 +12,17 @@ export default function Banner() {
     
     const [menu, setMenu] = useState('none');
     const [cli, setCli] = useState('');
-    const [logo, setLogo] = useState('block');
 
     function stateClient() {
         const userState = localStorage.getItem('client_id');
 
-        if (cli == '' && userState != null){
+        if (userState != null){
             setCli(<Client />);
             setMenu('none');
-            setLogo('none')
         }
         else {
             alert('Você precisa fazer login primeiro!')
             setCli('');
-            setLogo('none');
         }
     }
 

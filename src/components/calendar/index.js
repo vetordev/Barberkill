@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDom from 'react-dom'
 import moment from 'moment'
 import Calendar from 'ciqu-react-calendar'
@@ -12,24 +12,25 @@ class MyCalendar extends React.Component {
       value: moment()
     }
   }
-
+  
   onChange = (value, inputValue) => {
     localStorage.setItem('date', value.format('DD/MM/YYYY'))
     this.setState({value})
   }
-
-  onOpenChange = (status) => {
-    console.log('open status: ' + status)
-  }
+  // onLoad = (value) =
+  // onOpenChange = (status) => {
+  //   console.log('open status: ' + status)
+  // }
 
   disabledDate = (currentDate, inputValue) => {
     return false
   }
 
   render() {
-    const {onChange, onOpenChange, disabledDate} = this
+    const {onChange, onOpenChange, disabledDate, onLoad} = this
     return <div id="calendary">
       <Calendar
+        onLoad={onChange}
         onChange={onChange}
         value={this.state.value}
         allowClear={true}

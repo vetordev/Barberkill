@@ -1,12 +1,17 @@
 import 'rc-time-picker/assets/index.css';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDom from 'react-dom';
 import moment from 'moment';
 import TimePicker from 'rc-time-picker';
 
 export default function Timer() {
+
     const format = 'HH:mm';
+    useEffect(() => {
+        localStorage.setItem('horary', moment().format(format))
+    }, [])
+
     function oi(value) {
         localStorage.setItem('horary', value.format(format))
     }
