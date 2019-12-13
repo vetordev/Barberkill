@@ -7,7 +7,7 @@ const Precos = () => (
         {/* div */}
         <div className="flex">
             <div id="price-table">
-                <h1>Tabela de preços</h1>
+                {/* <h1>Tabela de preços</h1>
                 <p>
                     Corte masculino.....................R$50,00<br></br>
                     Corte máquina.........................R$45,00<br></br>
@@ -20,7 +20,7 @@ const Precos = () => (
                 <p>
                     Combo corte+barba.............R$90,00<br/>
                     Combo máquina+barba.....R$90,00
-                </p>
+                </p> */}
             </div>
         </div>
     </div>

@@ -25,10 +25,10 @@ export default function Contato () {
         alert("E-mail enviado com sucesso!")
     }
 
-    function oi(e){
-        if (e.keyCode == 70)
-            return false;
-        // else return e.keyCode 
+    function justLetters(e){
+        const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
+
+        if (letters.indexOf(e.key.toLowerCase()) == -1) e.preventDefault()
     }
 
     return (
@@ -40,11 +40,16 @@ export default function Contato () {
                     <div id="form">
                         <input type="text" name="name" id="name" placeholder="Seu nome" 
                             onChange={ event => setName(event.target.value) } 
-                            // onKeyDown={ event => oi(event)}
-                            // value={oi}
+                            onKeyDown={ event => justLetters(event)}
                         />
-                        <input type="text" name="email" id="email" placeholder="Seu e-mail" onChange={ event => setEmail(event.target.value) } />
-                        <input type="text" name="subject" id="subject" placeholder="Assunto" onChange={ event => setSubject(event.target.value) }/>
+                        <input type="text" name="email" id="email" placeholder="Seu e-mail" 
+                            onChange={ event => setEmail(event.target.value) } 
+                            onKeyDown={ event => justLetters(event)}
+                        />
+                        <input type="text" name="subject" id="subject" placeholder="Assunto" 
+                            onChange={ event => setSubject(event.target.value) }
+                            onKeyDown={ event => justLetters(event)}
+                        />
                         <textarea placeholder="Sua dúvida, sugestão, elogio ou reclamação." name="msg" id="msg" cols="30" rows="10" onChange={ event => setText(event.target.value) } /> 
                         <button onClick={ sendEmail }>Enviar</button>
                     </div>
