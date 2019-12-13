@@ -37,15 +37,13 @@ export default function Signin () {
         }
 
     }
-    async function storageCliId() {
-        // const response = await api.get('/clients', email);
-
-        // console.log(response.data);
-    }
 
     return (
         <>
-            <input type="password" name="pass" id="pass" onChange={ event => setPassword(sha('sha512').update(event.target.value).digest('hex')) } placeholder="Sua senha" required/>
+            <input type="password" name="pass" id="pass" placeholder="Sua senha" required
+                onChange={ event => setPassword(sha('sha512').update(event.target.value).digest('hex')) }                 
+            />
+
             <p> { incorrectPass } </p>
             <Link to={link}>
                 <button type="button" onClick={fetchLogin}>Logar</button>
