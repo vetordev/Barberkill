@@ -38,16 +38,16 @@ export default function Agnd2() {
     }
 
     function justEmail(e) {
-        const letters = ["ç", "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z", "@", ".", "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+        const letters = ["ç"," ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z", "@", ".", "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-        if (letters.indexOf(e.key.toLowerCase()) == -1) e.preventDefault()
+        if (letters.indexOf(e.key.toLowerCase()) == -1 && e.keyCode != 46) e.preventDefault()
     }
 
     return (
         <div className="container-aux start" id="aux-agend">
             <h1 id="h1agnd2"><b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail</h1>
             <div id="lateral">
-                <input type="email" name="email" id="email" placeholder="Seu e-mail" maxLength="100"
+                <input type="email" name="email" id="email" placeholder="Seu e-mail" maxLength="100" required
                     onChange={ event => setEmail(event.target.value) }
                     onKeyDown={ event => justEmail(event.target.value) }
                 />

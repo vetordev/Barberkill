@@ -145,6 +145,24 @@ export default function Client() {
         setCli('none');
     }
 
+    function justLetters(e){
+        const letters = [" ", "ç","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
+
+        if (letters.indexOf(e.key.toLowerCase()) == -1 && e.keyCode != 8 && e.keyCode != 46) e.preventDefault();
+    }
+
+    function justNumbers(e) {
+        const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+        if (numbers.indexOf(e.key.toLowerCase()) == -1 && e.keyCode != 46) e.preventDefault();
+    }
+
+    function justEmail(e) {
+        const letters = ["ç", "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z", "@", ".", "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+        if (letters.indexOf(e.key.toLowerCase()) == -1 && e.keyCode != 46) e.preventDefault()
+    }
+
     return (
             <div id="clients" style={{display: cli}}>
                 <div id="client-container">
@@ -157,27 +175,43 @@ export default function Client() {
                             <div id="container-personal">
                                 <div className="field">
                                     <label htmlFor="name">Seu nome</label>
-                                    <input type="text" id="name" name="name" className="input-client" value={ name } onChange={ event => handleFieldsCli(event.target.value, "name") }/>
+                                    <input type="text" id="name" name="name" className="input-client" value={ name } maxLength="100" required
+                                        onChange={ event => handleFieldsCli(event.target.value, "name") }
+                                        onKeyDown={ event => justLetters(event)}
+                                    />
                                 </div>
 
                                 <div className="field">
                                     <label htmlFor="email">E-mail</label>
-                                    <input type="text" id="email" name="email" className="input-client" value={ email } onChange={ event => handleFieldsCli(event.target.value, "email") }/>
+                                    <input type="text" id="email" name="email" className="input-client" value={ email } maxLength="100" required
+                                        onChange={ event => handleFieldsCli(event.target.value, "email") }
+                                        onKeyDown={ event => justEmail(event)}
+                                    />
                                 </div>
 
                                 <div className="field">
                                     <label htmlFor="cpf">CPF</label>
-                                    <input type="text" id="cpf" name="cpf" className="input-client" value={ cpf } onChange={ event => handleFieldsCli(event.target.value, "cpf") }/>
+                                    <input type="text" id="cpf" name="cpf" className="input-client" value={ cpf } maxLength="8" required
+                                        onChange={ event => handleFieldsCli(event.target.value, "cpf") }
+                                        onKeyDown={ event => justNumbers(event)}
+                                    />
                                 </div>
 
                                 <div className="field">
                                     <label htmlFor="tel">Telefone:</label>
-                                    <input type="text" id="tel" name="tel" className="input-client" value={ tel } onChange={ event => handleFieldsCli(event.target.value, "tel") }/>
+                                    <input type="text" id="tel" name="tel" className="input-client" value={ tel } maxLength="8" required
+                                        onChange={ event => handleFieldsCli(event.target.value, "tel") }
+                                        onKeyDown={ event => justNumbers(event)}
+                                    />
+
                                 </div>
 
                                 <div className="field">
                                     <label htmlFor="cel">Celular:</label>
-                                    <input type="text" id="cel" name="cel" className="input-client" value={ cel } onChange={ event => handleFieldsCli(event.target.value, "cel") }/>
+                                    <input type="text" id="cel" name="cel" className="input-client" value={ cel } maxLength="8" required
+                                        onChange={ event => handleFieldsCli(event.target.value, "cel") }
+                                        onKeyDown={ event => justNumbers(event)}
+                                    />
                                 </div>
                                 { btnCli }
                             </div>

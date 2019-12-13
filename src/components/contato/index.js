@@ -26,9 +26,9 @@ export default function Contato () {
     }
 
     function justLetters(e){
-        const letters = ["ç", "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
+        const letters = ["ç"," ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
 
-        if (letters.indexOf(e.key.toLowerCase()) == -1) e.preventDefault()
+        if (letters.indexOf(e.key.toLowerCase()) == -1 && e.keyCode != 8 && e.keyCode != 46) e.preventDefault()
     }
 
     return (
@@ -38,19 +38,19 @@ export default function Contato () {
             <h1>Fale com a gente!</h1>
                 <div id="rowaa">
                     <div id="form">
-                        <input type="text" name="name" id="name" placeholder="Seu nome" 
+                        <input type="text" name="name" id="name" placeholder="Seu nome" required
                             onChange={ event => setName(event.target.value) } 
                             onKeyDown={ event => justLetters(event)}
                         />
-                        <input type="text" name="email" id="email" placeholder="Seu e-mail" 
+                        <input type="text" name="email" id="email" placeholder="Seu e-mail" required
                             onChange={ event => setEmail(event.target.value) } 
                             onKeyDown={ event => justLetters(event)}
                         />
-                        <input type="text" name="subject" id="subject" placeholder="Assunto" 
+                        <input type="text" name="subject" id="subject" placeholder="Assunto" required
                             onChange={ event => setSubject(event.target.value) }
                             onKeyDown={ event => justLetters(event)}
                         />
-                        <textarea placeholder="Sua dúvida, sugestão, elogio ou reclamação." name="msg" id="msg" cols="30" rows="10" onChange={ event => setText(event.target.value) } /> 
+                        <textarea placeholder="Sua dúvida, sugestão, elogio ou reclamação." name="msg" id="msg" cols="30" rows="10" onChange={ event => setText(event.target.value) } maxLength="700" required /> 
                         <button onClick={ sendEmail }>Enviar</button>
                     </div>
                     <div id="social">
