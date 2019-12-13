@@ -1,6 +1,7 @@
 div#agendamento h1 {
     color: #FFF;
     padding-bottom: 30px;
+    font-family: 'Ubuntu', sans-serif;
 }
 div#agendamento select {
     border: none;

@@ -17,7 +17,7 @@ export default function Banner() {
         const userState = localStorage.getItem('client_id');
 
         if (userState != null){
-            setCli(<Client />);
+            setCli(<Client style={{display: 'block'}}/>);
             setMenu('none');
         }
         else {
